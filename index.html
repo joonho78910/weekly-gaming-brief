@@ -79,7 +79,11 @@
     transition:background .12s, transform .12s; }
   .cal-week.has-data { cursor:pointer; }
   .cal-week.has-data:hover { background:var(--accent-soft); }
+  .cal-week.has-data::after { content:""; position:absolute; right:5px; top:50%;
+    width:4px; height:4px; border-radius:50%; background:var(--gold);
+    transform:translateY(-50%); }
   .cal-week.active { background:var(--text-strong); }
+  .cal-week.active::after { display:none; }
   .cal-week.active .cal-day { color:#fff; }
   .cal-week.active .cal-day.outside { color:#aaa; }
   .cal-day { text-align:center; font-size:11.5px; padding:4px 0; color:var(--text);
@@ -87,11 +91,6 @@
   .cal-day.outside { color:var(--subtle); opacity:0.5; }
   .cal-day.today { color:var(--kr); font-weight:800; }
   .cal-week.active .cal-day.today { color:#FFB4B4; }
-  .cal-legend { display:flex; gap:8px; align-items:center; margin-top:10px;
-    padding:8px 6px 2px; border-top:1px dashed var(--border); font-size:10.5px; color:var(--muted); }
-  .cal-legend .dot { width:8px; height:8px; border-radius:2px; display:inline-block; }
-  .cal-legend .dot.has { background:var(--text-strong); }
-  .cal-legend .dot.today { background:var(--kr); }
 
   .toc { padding:14px; background:var(--panel); border:1px solid var(--border); border-radius:10px; }
   .toc-h { font-size:10.5px; text-transform:uppercase; letter-spacing:1.6px; color:var(--subtle);
@@ -205,7 +204,7 @@
     letter-spacing:0.3px; }
   .footer-note a { color:var(--muted); }
 
-  /* INLINE HIGHLIGHTS — auto-detected key facts */
+  /* INLINE HIGHLIGHTS */
   .hl-money { color:#B45309; font-weight:800; font-variant-numeric:tabular-nums; }
   .hl-up    { color:#15803D; font-weight:800; font-variant-numeric:tabular-nums; }
   .hl-down  { color:#B91C1C; font-weight:800; font-variant-numeric:tabular-nums; }
@@ -246,7 +245,7 @@
     </div>
   </div>
   <div class="topbar-meta" id="topbar-meta">
-    <span class="chip live">매주 월요일 09:00 자동 갱신</span>
+    <span class="chip live">매주 월요일 09:30 자동 갱신</span>
   </div>
 </div>
 
@@ -259,7 +258,7 @@
       <div class="toc-item" data-toc="games"><span>신작 · 업데이트</span><span class="n" id="cnt-games">·</span></div>
       <div class="toc-item" data-toc="charts"><span>차트 · 순위</span><span class="n" id="cnt-charts">·</span></div>
       <div class="toc-item" data-toc="industry"><span>업계 뉴스</span><span class="n" id="cnt-industry">·</span></div>
-      <div class="toc-item" data-toc="marketing"><span>마케팅 · 커뮤니티</span><span class="n" id="cnt-marketing">·</span></div>
+      <div class="toc-item" data-toc="marketing"><span>마케팅 동향</span><span class="n" id="cnt-marketing">·</span></div>
     </div>
   </aside>
   <main class="main" id="main"><div class="loading">데이터 로딩 중...</div></main>
@@ -270,8 +269,7 @@
   var INDEX_URL = "./data/index.json";
   var WEEK_URL  = function (id) { return "./data/" + id + ".json"; };
   var VER_URL   = "./data/version.json";
-  var HOLDER_MARK = "__HLPH__";
-  var HOLDER_MARK  = "";
+  var HMARK     = "__HLPH__";
 
   function esc(s) { if (s == null) return "";
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -284,35 +282,40 @@
     function stash(match, cls) {
       var idx = holders.length;
       holders.push({ cls: cls, content: match });
-      return HOLDER_MARK + idx + HOLDER_MARK;
+      return HMARK + idx + HMARK;
     }
-    s = s.replace(/\d{1,3}(?:,\d{3})*조(?:\s*\d{1,3}(?:,\d{3})*억)?(?:\s*원)?/g,
+    // Money — order matters
+    s = s.replace(/\d+(?:[,.]\d+)*조(?:\s*\d+(?:[,.]\d+)*억)?(?:\s*원)?/g,
       function (m) { return stash(m, "hl-money"); });
-    s = s.replace(/\d{1,3}(?:,\d{3})*억\s*(?:원|달러)/g,
+    s = s.replace(/\d+(?:[,.]\d+)*억\s*(?:원|달러)/g,
       function (m) { return stash(m, "hl-money"); });
-    s = s.replace(/\d{1,3}(?:,\d{3})*만\s*원/g,
+    s = s.replace(/\d+(?:[,.]\d+)*만\s*원/g,
       function (m) { return stash(m, "hl-money"); });
-    s = s.replace(/\$\d{1,3}(?:,\d{3})*(?:\.\d+)?\s*[KMB]?/g,
+    s = s.replace(/\$\d+(?:[,.]\d+)*\s*[KMB]?/g,
       function (m) { return stash(m, "hl-money"); });
-    s = s.replace(/\d{1,3}(?:,\d{3})*억(?![가-힣\d])/g,
+    s = s.replace(/\d+(?:[,.]\d+)*억(?![가-힣\d])/g,
       function (m) { return stash(m, "hl-money"); });
+    // Percent
     s = s.replace(/[+]\d+(?:\.\d+)?\s*%/g,
       function (m) { return stash(m, "hl-up"); });
     s = s.replace(/[-−]\d+(?:\.\d+)?\s*%/g,
       function (m) { return stash(m, "hl-down"); });
     s = s.replace(/\d+(?:\.\d+)?\s*%/g,
       function (m) { return stash(m, "hl-pct"); });
+    // Rank
     s = s.replace(/\d+위/g,
       function (m) { return stash(m, "hl-rank"); });
     s = s.replace(/TOP\s*\d+/gi,
       function (m) { return stash(m, "hl-rank"); });
-    s = s.replace(/\d{1,3}(?:,\d{3})*만(?:\s*(?:명|장|건|개|종|회|달러|돌파))?/g,
+    // Quantity
+    s = s.replace(/\d+(?:[,.]\d+)*만(?:\s*(?:명|장|건|개|종|회|달러|돌파))?/g,
       function (m) { return stash(m, "hl-num"); });
+    // Date
     s = s.replace(/\d{1,2}월\s*\d{1,2}일/g,
       function (m) { return stash(m, "hl-date"); });
 
-    var sentRe = new RegExp(HOLDER_MARK + "(\\d+)" + HOLDER_MARK, "g");
-    s = s.replace(sentRe, function (_, idx) {
+    var holderRe = new RegExp(HMARK + "(\\d+)" + HMARK, "g");
+    s = s.replace(holderRe, function (_, idx) {
       var p = holders[parseInt(idx, 10)];
       return '<span class="' + p.cls + '">' + p.content + '</span>';
     });
@@ -410,10 +413,7 @@
       }
       html += '</div>';
     }
-    html += '</div><div class="cal-legend">' +
-      '<span class="dot has"></span><span>보고서 있음</span>' +
-      '<span style="flex:1"></span>' +
-      '<span class="dot today"></span><span>오늘</span></div>';
+    html += '</div>';
 
     var cal = document.getElementById("calendar");
     cal.innerHTML = html;
@@ -445,11 +445,11 @@
         (g.tag ? ' ' + badge(g.tag) : '') +
       '</div>';
     var fields = '<div class="field-list">';
-    fields += row("STATUS · 상태", g.status);
-    fields += row("SCHEDULE · 일정", g.schedule);
-    fields += row("FEATURES · 특징", g.features);
-    fields += row("EDGE · 차별화", g.differentiation);
-    fields += row("WHY · 왜 중요", g.whyImportant);
+    fields += row("STATUS", g.status);
+    fields += row("SCHEDULE", g.schedule);
+    fields += row("FEATURES", g.features);
+    fields += row("EDGE", g.differentiation);
+    fields += row("WHY IT MATTERS", g.whyImportant);
     fields += '</div>';
     var src = g.sourceUrl
       ? '<a class="source-link" href="' + esc(g.sourceUrl) + '" target="_blank" rel="noopener">↗ ' + esc(shortHost(g.sourceUrl)) + '</a>'
@@ -520,7 +520,7 @@
           '<div class="stat"><div class="stat-num">' + games.length + '</div><div class="stat-label">신작 · 업데이트</div></div>' +
           '<div class="stat"><div class="stat-num">' + charts.length + '</div><div class="stat-label">차트 · 순위</div></div>' +
           '<div class="stat"><div class="stat-num">' + industry.length + '</div><div class="stat-label">업계 뉴스</div></div>' +
-          '<div class="stat"><div class="stat-num">' + marketing.length + '</div><div class="stat-label">마케팅 · 커뮤니티</div></div>' +
+          '<div class="stat"><div class="stat-num">' + marketing.length + '</div><div class="stat-label">마케팅 동향</div></div>' +
         '</div>' +
       '</div></header>';
 
@@ -549,13 +549,13 @@
     }
     if (marketing.length) {
       content += '<section class="section" id="sec-marketing">';
-      content += renderSectionHdr("04", "마케팅 · 커뮤니티 동향", "Marketing & Community", marketing);
+      content += renderSectionHdr("04", "마케팅 동향", "Marketing", marketing);
       content += '<div class="compact-grid">';
       marketing.forEach(function (n, i) { content += renderNewsCard(n, i + 1); });
       content += '</div></section>';
     }
 
-    content += '<div class="footer-note">다음 호는 다음 월요일 09:00 발행.  ·  ' +
+    content += '<div class="footer-note">다음 호는 다음 월요일 09:30 발행.  ·  ' +
       '<a href="https://github.com/joonho78910/weekly-gaming-brief" target="_blank" rel="noopener">GitHub</a></div>';
     content += '</div></div>';
 
@@ -597,7 +597,7 @@
       CAL_YEAR = today.getFullYear(); CAL_MONTH = today.getMonth();
       renderCalendar();
       document.getElementById("main").innerHTML =
-        '<div class="content"><div class="content-inner"><div class="placeholder"><div class="icon">⏳</div><h2>아직 도착한 보고서가 없습니다</h2><div>매주 월요일 09:00에 자동으로 추가됩니다.</div></div></div></div>';
+        '<div class="content"><div class="content-inner"><div class="placeholder"><div class="icon">⏳</div><h2>아직 도착한 보고서가 없습니다</h2><div>매주 월요일 09:30에 자동으로 추가됩니다.</div></div></div></div>';
       return;
     }
 
@@ -618,9 +618,9 @@
       if (v.lastBuild && v.lastBuild.targetWeek) verLabel += " · " + v.lastBuild.targetWeek;
       if (v.lastBuild && v.lastBuild.n) verLabel += " · build " + v.lastBuild.n;
       meta.innerHTML =
-        '<span class="chip">' + REPORTS.length + ' Weeks</span>' +
+        '<span class="chip">누적 ' + REPORTS.length + '개 주차</span>' +
         '<span class="chip">' + esc(verLabel) + '</span>' +
-        '<span class="chip live">매주 월 09:00 자동 갱신</span>';
+        '<span class="chip live">매주 월요일 09:30 자동 갱신</span>';
     }).catch(function () {});
   }).catch(function (err) {
     document.getElementById("calendar").innerHTML = '<div class="empty-state">로드 실패</div>';
