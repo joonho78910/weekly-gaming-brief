@@ -6,202 +6,234 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
   :root { color-scheme: light;
-    --bg:#F2F4F7; --panel:#FFFFFF; --panel-2:#FAFBFC;
-    --border:#E4E7EB; --border-soft:#EEF0F3; --border-strong:#CBD2DA;
-    --text:#0F172A; --text-strong:#020617; --muted:#475569; --subtle:#94A3B8;
-    --primary:#0F2A4A; --primary-2:#1E3A6A; --primary-soft:#E7EEF8; --primary-tint:#F4F7FB;
-    --kr:#C72A2A; --kr-soft:#FEEBEB; --kr-tint:#FDF7F7;
-    --gl:#1F6FC8; --gl-soft:#E1ECF8; --gl-tint:#F5F8FC;
-    --warn:#A66200; --warn-soft:#FCEEDB;
-    --ok:#2E7D32; --ok-soft:#E6F4EA;
-    --accent:#D6A100;
-    --shadow-sm:0 1px 2px rgba(15,23,42,.05);
-    --shadow:0 2px 4px rgba(15,23,42,.05), 0 1px 2px rgba(15,23,42,.06);
-    --shadow-lg:0 4px 12px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.05);
+    --bg:#F2F1ED;
+    --panel:#FFFFFF;
+    --panel-tint:#FAF9F6;
+    --border:#E5E2DC;
+    --border-soft:#EFEDE7;
+    --rule:#1A1815;
+    --text:#15130F;
+    --text-strong:#000000;
+    --muted:#5C564F;
+    --subtle:#8F8A82;
+    --kr:#B23A2A;
+    --kr-soft:#F5E4E1;
+    --gl:#1F4F86;
+    --gl-soft:#E2EBF4;
+    --accent:#A67C2B;
+    --highlight:#FFF6D9;
+    --shadow:0 1px 2px rgba(20,18,14,.04), 0 2px 6px rgba(20,18,14,.04);
+    --shadow-lg:0 4px 16px rgba(20,18,14,.08), 0 2px 4px rgba(20,18,14,.04);
   }
   * { box-sizing:border-box; }
-  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Segoe UI",Arial,sans-serif;
-    background:var(--bg); color:var(--text); font-size:14px; line-height:1.6; -webkit-font-smoothing:antialiased; }
-  a { color:var(--primary-2); text-decoration:none; word-break:break-all; }
+  html, body { margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic","Segoe UI",Arial,sans-serif;
+    background:var(--bg); color:var(--text); font-size:15px; line-height:1.65;
+    -webkit-font-smoothing:antialiased; }
+  a { color:var(--text); text-decoration:none; }
   a:hover { text-decoration:underline; }
-  h1,h2,h3,h4 { letter-spacing:-0.4px; }
+  h1,h2,h3,h4 { letter-spacing:-0.5px; margin:0; }
 
-  /* ============ TOP BAR ============ */
-  .topbar { background:var(--panel); border-bottom:1px solid var(--border);
-    padding:14px 28px; display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:12px; position:sticky; top:0; z-index:30; }
-  .brand-block { display:flex; align-items:baseline; gap:10px; }
-  .brand-mark { width:30px; height:30px; border-radius:8px;
-    background:linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
-    color:#fff; display:inline-flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:14px; letter-spacing:-0.5px; }
-  .brand { font-weight:800; font-size:17px; color:var(--text-strong); letter-spacing:-0.4px; }
-  .brand-sub { color:var(--muted); font-size:11.5px; font-weight:500; letter-spacing:0.2px; }
-  .topbar-meta { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
-  .meta-chip { background:var(--bg); border:1px solid var(--border); border-radius:999px;
-    padding:4px 10px; font-size:11.5px; color:var(--muted); font-weight:500; }
-  .meta-chip.live { background:var(--ok-soft); color:var(--ok); border-color:#BFE0C4; }
-  .meta-chip.live::before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%;
-    background:var(--ok); margin-right:6px; vertical-align:1px; }
+  /* ===== TOPBAR ===== */
+  .topbar { background:var(--panel); border-bottom:1px solid var(--rule);
+    padding:14px 32px; display:flex; align-items:center; justify-content:space-between;
+    gap:16px; flex-wrap:wrap; position:sticky; top:0; z-index:30; }
+  .brand-wrap { display:flex; align-items:baseline; gap:12px; }
+  .brand { font-weight:900; font-size:18px; color:var(--text-strong); letter-spacing:-0.6px;
+    font-family:"Times New Roman", "Noto Serif KR", "Apple SD Gothic Neo", serif; }
+  .brand-sub { color:var(--muted); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600; }
+  .topbar-meta { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .chip { background:var(--bg); border:1px solid var(--border); border-radius:2px;
+    padding:4px 10px; font-size:11px; color:var(--muted); font-weight:600;
+    letter-spacing:0.4px; text-transform:uppercase; }
+  .chip.live { background:#0F1A14; color:#FFFFFF; border-color:#0F1A14; }
+  .chip.live::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%;
+    background:#7CC58A; margin-right:6px; vertical-align:2px; box-shadow:0 0 0 2px rgba(124,197,138,.25); }
 
-  /* ============ LAYOUT ============ */
-  .layout { display:grid; grid-template-columns:260px 1fr; min-height:calc(100vh - 60px); }
-  .sidebar { background:var(--panel); border-right:1px solid var(--border); padding:18px 14px;
+  /* ===== LAYOUT ===== */
+  .layout { display:grid; grid-template-columns:230px 1fr; min-height:calc(100vh - 60px); }
+  .sidebar { background:var(--panel); border-right:1px solid var(--rule); padding:24px 16px;
     position:sticky; top:60px; height:calc(100vh - 60px); overflow-y:auto; }
-  .sidebar h3 { margin:6px 8px 12px; font-size:10.5px; text-transform:uppercase;
-    letter-spacing:1px; color:var(--subtle); font-weight:700; }
-  .week-list { list-style:none; margin:0; padding:0; }
-  .week-item { padding:10px 12px; border-radius:8px; cursor:pointer; margin-bottom:4px;
-    transition:background .15s; border:1px solid transparent; }
-  .week-item:hover { background:var(--primary-tint); }
-  .week-item.active { background:var(--primary-soft); border-color:#D5E1F0; }
-  .week-item.active .week-title { color:var(--primary); font-weight:700; }
-  .week-title { font-size:13.5px; color:var(--text); font-weight:600; display:flex; align-items:center; gap:6px; }
-  .week-range { font-size:11.5px; color:var(--muted); margin-top:3px; }
-  .week-counts { font-size:11px; color:var(--subtle); margin-top:4px; }
+  .side-h { font-size:10px; text-transform:uppercase; letter-spacing:1.6px; color:var(--subtle);
+    font-weight:800; margin:0 6px 14px; }
+  .week-list { list-style:none; margin:0 0 24px; padding:0; }
+  .week-item { padding:11px 12px; cursor:pointer; margin-bottom:2px;
+    border-left:3px solid transparent; transition:background .15s, border-color .15s; }
+  .week-item:hover { background:var(--panel-tint); }
+  .week-item.active { background:var(--bg); border-left-color:var(--rule); }
+  .week-item.active .week-id { color:var(--text-strong); }
+  .week-id { font-size:14px; color:var(--text); font-weight:800; letter-spacing:-0.2px;
+    font-family:"Times New Roman", serif; }
+  .week-range { font-size:11px; color:var(--muted); margin-top:3px; letter-spacing:0.3px; }
+  .week-counts { font-size:10.5px; color:var(--subtle); margin-top:5px; letter-spacing:0.2px; }
   .empty-state { padding:12px; color:var(--muted); font-size:12px; }
 
-  .main { padding:28px 36px 80px; max-width:1280px; }
+  .toc { padding:12px; background:var(--panel-tint); border:1px solid var(--border); border-radius:4px; }
+  .toc-h { font-size:10px; text-transform:uppercase; letter-spacing:1.6px; color:var(--subtle);
+    font-weight:800; margin-bottom:10px; }
+  .toc-item { display:flex; justify-content:space-between; align-items:center; padding:5px 0;
+    font-size:12px; color:var(--muted); cursor:pointer; }
+  .toc-item:hover { color:var(--text-strong); }
+  .toc-item .n { background:var(--panel); border:1px solid var(--border); border-radius:2px;
+    padding:1px 7px; font-size:10.5px; font-weight:800; color:var(--text); min-width:22px; text-align:center; }
 
-  /* ============ HERO (week header) ============ */
-  .hero { background:linear-gradient(135deg, #FFFFFF 0%, #F8FAFD 100%);
-    border:1px solid var(--border); border-radius:14px; padding:24px 28px;
-    margin-bottom:28px; box-shadow:var(--shadow-lg); position:relative; overflow:hidden; }
-  .hero::before { content:""; position:absolute; top:0; left:0; bottom:0; width:5px;
-    background:linear-gradient(180deg, var(--primary) 0%, var(--primary-2) 100%); }
-  .hero-row { display:flex; align-items:flex-start; gap:18px; flex-wrap:wrap; }
-  .hero-id { display:flex; flex-direction:column; flex-shrink:0; }
-  .hero-id .label { font-size:11px; text-transform:uppercase; letter-spacing:1.2px;
-    color:var(--subtle); font-weight:700; margin-bottom:2px; }
-  .hero-id .id { font-size:34px; font-weight:800; color:var(--primary); letter-spacing:-1px; line-height:1; }
-  .hero-id .range { font-size:13px; color:var(--muted); margin-top:6px; font-weight:500; }
-  .hero-body { flex:1; min-width:280px; }
-  .hero-summary-label { font-size:11px; text-transform:uppercase; letter-spacing:1px;
-    color:var(--subtle); font-weight:700; margin-bottom:6px; display:flex; align-items:center; gap:6px; }
-  .hero-summary-label::after { content:""; flex:1; height:1px; background:var(--border-soft); margin-left:8px; }
-  .hero-summary { font-size:14.5px; line-height:1.7; color:var(--text-strong); }
-  .hero-stats { display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;
-    padding-top:14px; border-top:1px dashed var(--border); }
-  .stat-pill { display:inline-flex; align-items:center; gap:6px; padding:5px 11px;
-    border-radius:999px; background:var(--panel); border:1px solid var(--border);
-    font-size:12px; color:var(--text); font-weight:500; }
-  .stat-pill .num { font-weight:800; color:var(--primary); font-size:13px; }
-  .badge-sample { display:inline-block; margin-left:10px; padding:3px 9px; border-radius:999px;
-    background:var(--warn-soft); color:var(--warn); font-size:10.5px; font-weight:700;
-    letter-spacing:0.5px; vertical-align:6px; }
+  .main { padding:0; min-width:0; }
 
-  /* ============ SECTION HEADER ============ */
-  .section-hdr { display:flex; align-items:center; gap:12px; margin:34px 0 16px;
-    padding-bottom:10px; border-bottom:2px solid var(--primary); }
-  .section-hdr .icon { font-size:20px; line-height:1; }
-  .section-hdr .title { font-size:16px; font-weight:800; color:var(--text-strong); letter-spacing:-0.3px; }
-  .section-hdr .count { background:var(--primary); color:#fff; font-size:11px; font-weight:700;
-    padding:2px 9px; border-radius:999px; letter-spacing:0.3px; }
-  .section-hdr .spacer { flex:1; }
-  .section-hdr .balance { font-size:11.5px; color:var(--muted); display:flex; gap:6px; }
-  .balance-pill { padding:2px 8px; border-radius:4px; font-weight:600; font-size:11px; }
-  .balance-pill.kr { background:var(--kr-tint); color:var(--kr); }
-  .balance-pill.gl { background:var(--gl-tint); color:var(--gl); }
+  /* ===== MASTHEAD (week hero) ===== */
+  .masthead { background:var(--panel); border-bottom:1px solid var(--rule); padding:40px 56px 36px; }
+  .masthead-overline { font-size:11px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--accent); font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+  .masthead-overline::after { content:""; flex:1; height:1px; background:var(--rule); max-width:120px; }
+  .masthead-title { font-family:"Times New Roman","Noto Serif KR", serif; font-size:42px;
+    font-weight:800; color:var(--text-strong); letter-spacing:-1.5px; line-height:1.15;
+    margin-bottom:14px; }
+  .masthead-id-line { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    padding-top:14px; border-top:1px solid var(--border); }
+  .masthead-id { font-family:"Times New Roman", serif; font-weight:800; font-size:14px;
+    color:var(--text-strong); letter-spacing:0.5px; }
+  .masthead-range { color:var(--muted); font-size:13px; letter-spacing:0.3px; }
+  .masthead-meta { color:var(--subtle); font-size:12px; }
+  .masthead-summary { margin-top:18px; font-size:15.5px; line-height:1.75; color:var(--text);
+    max-width:880px; }
 
-  /* ============ GAME CARDS (rich) ============ */
-  .games-stack { display:flex; flex-direction:column; gap:12px; }
-  .game-card { background:var(--panel); border:1px solid var(--border); border-radius:12px;
-    padding:18px 20px 18px 22px; box-shadow:var(--shadow); position:relative; overflow:hidden;
-    transition:box-shadow .15s, transform .15s; }
+  .stat-row { display:flex; gap:0; margin-top:24px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+  .stat { flex:1; padding:14px 18px; border-right:1px solid var(--border); text-align:left; }
+  .stat:last-child { border-right:none; }
+  .stat-num { font-family:"Times New Roman", serif; font-weight:800; font-size:32px; color:var(--text-strong); line-height:1; letter-spacing:-1px; }
+  .stat-label { font-size:10.5px; text-transform:uppercase; letter-spacing:1.4px; color:var(--muted); font-weight:700; margin-top:6px; }
+
+  /* ===== CONTENT WRAP ===== */
+  .content { padding:36px 56px 80px; }
+
+  /* ===== SECTION HEADER ===== */
+  .section { margin-top:48px; }
+  .section:first-child { margin-top:0; }
+  .section-hdr { display:flex; align-items:flex-end; justify-content:space-between;
+    border-bottom:2px solid var(--rule); padding-bottom:10px; margin-bottom:24px; gap:14px; flex-wrap:wrap; }
+  .section-hdr-left { display:flex; align-items:baseline; gap:14px; }
+  .section-num { font-family:"Times New Roman", serif; font-size:38px; font-weight:800;
+    color:var(--accent); line-height:0.9; letter-spacing:-1.5px; }
+  .section-title-block { display:flex; flex-direction:column; gap:2px; }
+  .section-title { font-family:"Times New Roman","Noto Serif KR", serif; font-size:22px; font-weight:800; color:var(--text-strong); letter-spacing:-0.6px; }
+  .section-sub { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-balance { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .bal-pill { font-size:10.5px; letter-spacing:0.6px; font-weight:800; padding:3px 9px; border-radius:2px; }
+  .bal-pill.kr { background:var(--kr-soft); color:var(--kr); }
+  .bal-pill.gl { background:var(--gl-soft); color:var(--gl); }
+  .bal-pill.total { background:var(--text-strong); color:#fff; }
+
+  /* ===== GAME CARD (rich, magazine card-news style) ===== */
+  .games { display:grid; grid-template-columns:repeat(auto-fill, minmax(440px, 1fr)); gap:18px; }
+  .game-card { background:var(--panel); border:1px solid var(--border); border-radius:6px;
+    padding:24px 26px 22px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+    display:flex; flex-direction:column; gap:14px; transition:box-shadow .15s, transform .15s; }
   .game-card:hover { box-shadow:var(--shadow-lg); }
-  .game-card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; }
+  .game-card.featured { background:linear-gradient(180deg, #FFFCF3 0%, #FFFFFF 60%);
+    border:1px solid var(--accent); grid-column:1 / -1; padding:28px 32px 26px; }
+  .game-card .num { font-family:"Times New Roman", serif; font-size:13px; font-weight:800;
+    color:var(--accent); letter-spacing:0.5px; }
+  .game-card.featured .num::before { content:"FEATURED ·  "; color:var(--accent); }
+  .game-head { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .game-emoji { font-size:22px; line-height:1; }
+  .game-card.featured .game-emoji { font-size:28px; }
+  .game-title { font-family:"Times New Roman","Noto Serif KR", serif; font-size:22px;
+    font-weight:800; color:var(--text-strong); letter-spacing:-0.6px; line-height:1.2; }
+  .game-card.featured .game-title { font-size:30px; letter-spacing:-1px; }
+  .game-genre { color:var(--muted); font-size:13px; letter-spacing:0.2px; }
+  .game-genre::before { content:"·"; margin-right:8px; color:var(--subtle); }
+  .field-list { display:grid; grid-template-columns:max-content 1fr; column-gap:14px; row-gap:7px; }
+  .field-l { font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);
+    font-weight:800; padding-top:4px; white-space:nowrap; }
+  .field-v { font-size:14px; line-height:1.65; color:var(--text); word-break:break-word; }
+  .game-card.featured .field-v { font-size:14.5px; }
+  .game-card .source-link { display:inline-block; font-size:12px; color:var(--gl);
+    margin-top:4px; padding-top:12px; border-top:1px dashed var(--border); word-break:break-all; }
+
+  /* Color side bar for tag */
+  .game-card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px; }
   .game-card.kr::before { background:var(--kr); }
   .game-card.gl::before { background:var(--gl); }
-  /* Featured (first) card — bigger, more visual weight */
-  .game-card.featured { padding:22px 24px 22px 28px;
-    background:linear-gradient(135deg, #FFFFFF 0%, #FAFBFD 100%); }
-  .game-card.featured::before { width:6px; }
-  .game-card.featured .game-title { font-size:19px; }
-  .game-card.featured .featured-tag { display:inline-block; padding:2px 9px; border-radius:4px;
-    background:var(--accent); color:#fff; font-size:10px; font-weight:800; letter-spacing:0.8px;
-    margin-right:8px; vertical-align:2px; }
 
-  .game-head { display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
-  .game-emoji { font-size:22px; line-height:1; flex-shrink:0; }
-  .game-title-wrap { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; flex:1; min-width:0; }
-  .game-title { font-size:16.5px; font-weight:800; color:var(--text-strong); letter-spacing:-0.4px; }
-  .game-genre { color:var(--muted); font-size:13px; font-weight:500; }
-  .game-genre::before { content:"·"; margin:0 6px; color:var(--subtle); font-weight:400; }
-
-  .field-grid { display:grid; grid-template-columns:max-content 1fr; column-gap:14px; row-gap:8px; align-items:start; }
-  .field-label { font-weight:700; color:var(--text); font-size:12.5px; padding-top:1px;
-    white-space:nowrap; letter-spacing:-0.1px; }
-  .field-value { font-size:13.5px; line-height:1.65; color:var(--text); word-break:break-word; }
-  .field-value a { font-size:12.5px; color:var(--gl); word-break:break-all; }
-
-  /* ============ COMPACT CARDS GRID (2-col) ============ */
-  .compact-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(360px, 1fr));
-    gap:12px; }
-  .news-card { background:var(--panel); border:1px solid var(--border); border-radius:10px;
-    padding:14px 16px 14px 18px; box-shadow:var(--shadow-sm); position:relative;
-    transition:box-shadow .15s; display:flex; flex-direction:column; gap:6px; }
-  .news-card:hover { box-shadow:var(--shadow); }
-  .news-card::before { content:""; position:absolute; left:0; top:12px; bottom:12px; width:3px; border-radius:0 2px 2px 0; }
+  /* ===== COMPACT CARDS (news-style, card-news grid) ===== */
+  .compact-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:14px; }
+  .news-card { background:var(--panel); border:1px solid var(--border); border-radius:6px;
+    padding:20px 22px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px;
+    position:relative; overflow:hidden; transition:box-shadow .15s; }
+  .news-card:hover { box-shadow:var(--shadow-lg); }
+  .news-card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px; }
   .news-card.kr::before { background:var(--kr); }
   .news-card.gl::before { background:var(--gl); }
-  .news-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-  .news-emoji { font-size:17px; line-height:1; }
-  .news-title { font-size:14px; font-weight:800; color:var(--text-strong); letter-spacing:-0.3px;
-    flex:1; min-width:0; }
-  .news-body { font-size:13px; line-height:1.65; color:var(--text); }
-  .news-source { font-size:11.5px; margin-top:auto; }
+  .news-num { font-family:"Times New Roman", serif; font-size:11px; font-weight:800;
+    color:var(--accent); letter-spacing:1px; }
+  .news-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .news-emoji { font-size:18px; line-height:1; }
+  .news-title { font-family:"Times New Roman","Noto Serif KR", serif; font-size:17px;
+    font-weight:800; color:var(--text-strong); letter-spacing:-0.4px; line-height:1.3; flex:1; min-width:0; }
+  .news-body { font-size:13.5px; line-height:1.65; color:var(--text); }
+  .news-source { margin-top:auto; padding-top:10px; border-top:1px dashed var(--border);
+    font-size:11.5px; color:var(--muted); }
   .news-source a { color:var(--gl); }
-  .news-source .host { color:var(--muted); }
 
-  /* ============ BADGES ============ */
-  .badge { display:inline-flex; align-items:center; padding:2px 8px; border-radius:4px;
-    font-size:10.5px; font-weight:800; letter-spacing:0.6px; vertical-align:middle; }
+  /* ===== BADGES ===== */
+  .badge { display:inline-flex; align-items:center; padding:2px 7px; border-radius:2px;
+    font-size:10px; font-weight:800; letter-spacing:0.8px; text-transform:uppercase; }
   .badge-kr { background:var(--kr-soft); color:var(--kr); }
   .badge-gl { background:var(--gl-soft); color:var(--gl); }
-  .badge-warn { background:var(--warn-soft); color:var(--warn); }
 
-  /* ============ PLACEHOLDER / LOADING ============ */
-  .placeholder { background:var(--panel); border:1px dashed var(--border-strong); border-radius:12px;
-    padding:48px 24px; text-align:center; color:var(--muted); }
-  .placeholder .icon { font-size:34px; margin-bottom:10px; opacity:0.6; }
-  .placeholder h2 { color:var(--text); font-size:16px; margin:6px 0 6px; }
-  .loading { padding:48px; text-align:center; color:var(--muted); font-size:13px; }
-  .empty-section { color:var(--muted); font-size:13px; padding:14px 16px; background:var(--panel-2);
-    border:1px dashed var(--border); border-radius:10px; }
+  /* ===== STATES ===== */
+  .placeholder { background:var(--panel); border:1px dashed var(--border); padding:60px 24px;
+    text-align:center; color:var(--muted); border-radius:6px; }
+  .placeholder .icon { font-size:36px; opacity:0.6; margin-bottom:8px; }
+  .placeholder h2 { font-family:"Times New Roman", serif; color:var(--text); font-size:18px; margin:8px 0 6px; }
+  .loading { padding:60px; text-align:center; color:var(--muted); font-size:13px; }
+  .empty-section { color:var(--muted); font-size:13px; padding:18px; background:var(--panel-tint);
+    border:1px dashed var(--border); border-radius:6px; }
 
-  .footer-note { text-align:center; color:var(--subtle); font-size:11.5px; padding:32px 16px 8px; }
-  .footer-note a { color:var(--muted); text-decoration:underline; }
+  .footer-note { text-align:center; color:var(--subtle); font-size:11px; padding:40px 16px 8px;
+    letter-spacing:0.5px; }
+  .footer-note a { color:var(--muted); }
 
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 880px) {
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px) {
     .layout { grid-template-columns:1fr; }
-    .sidebar { position:static; height:auto; border-right:none; border-bottom:1px solid var(--border); }
-    .main { padding:20px 20px 60px; }
-    .hero-row { flex-direction:column; }
-    .hero-id .id { font-size:28px; }
+    .sidebar { position:static; height:auto; border-right:none; border-bottom:1px solid var(--rule); }
+    .masthead { padding:28px 24px; }
+    .masthead-title { font-size:30px; }
+    .content { padding:28px 24px 60px; }
+    .games, .compact-grid { grid-template-columns:1fr; }
+    .game-card.featured { padding:24px; }
+    .game-card.featured .game-title { font-size:24px; }
+    .stat-num { font-size:24px; }
+    .section-num { font-size:30px; }
   }
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="brand-block">
-    <span class="brand-mark">W</span>
-    <div>
-      <div class="brand">주간 모바일 게임 동향 브리프</div>
-      <div class="brand-sub">Weekly Mobile Gaming Industry Brief</div>
-    </div>
+  <div class="brand-wrap">
+    <div class="brand">Weekly Mobile Gaming Brief</div>
+    <div class="brand-sub">주간 모바일 게임 동향 브리프</div>
   </div>
   <div class="topbar-meta" id="topbar-meta">
-    <span class="meta-chip live">매주 월요일 09:00 자동 갱신</span>
+    <span class="chip live">매주 월요일 09:00 자동 갱신</span>
   </div>
 </div>
 
 <div class="layout">
   <aside class="sidebar">
-    <h3>주차 아카이브</h3>
+    <div class="side-h">주차 아카이브</div>
     <ul class="week-list" id="weekList"><li class="empty-state">로딩 중...</li></ul>
+
+    <div class="toc" id="tocBlock" style="display:none;">
+      <div class="toc-h">이번 호 목차</div>
+      <div class="toc-item" data-toc="games"><span>신작 · 업데이트</span><span class="n" id="cnt-games">·</span></div>
+      <div class="toc-item" data-toc="charts"><span>차트 · 순위</span><span class="n" id="cnt-charts">·</span></div>
+      <div class="toc-item" data-toc="industry"><span>업계 뉴스</span><span class="n" id="cnt-industry">·</span></div>
+      <div class="toc-item" data-toc="marketing"><span>마케팅 · 커뮤니티</span><span class="n" id="cnt-marketing">·</span></div>
+    </div>
   </aside>
+
   <main class="main" id="main"><div class="loading">데이터 로딩 중...</div></main>
 </div>
 
@@ -214,8 +246,13 @@
   function esc(s) { if (s == null) return "";
     return String(s).replace(/[&<>"']/g, function (c) {
       return ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" })[c]; }); }
+  function pad2(n) { return n < 10 ? "0" + n : String(n); }
   function fmtMD(d) { var x = new Date(d + "T00:00:00"); return (x.getMonth()+1) + "/" + x.getDate(); }
-  function fmtFull(s, e) { return s.replaceAll("-", ".") + " ~ " + e.replaceAll("-", "."); }
+  function fmtFull(s, e) {
+    var sd = new Date(s + "T00:00:00"), ed = new Date(e + "T00:00:00");
+    return sd.getFullYear() + "년 " + (sd.getMonth()+1) + "월 " + sd.getDate() + "일 — " +
+      (ed.getMonth()+1) + "월 " + ed.getDate() + "일";
+  }
   function badge(tag) { if (tag === "KR") return '<span class="badge badge-kr">KR</span>';
     if (tag === "GL") return '<span class="badge badge-gl">GL</span>'; return ""; }
   function shortHost(url) { try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return url; } }
@@ -224,7 +261,6 @@
     return fetch(cacheBust(u), { cache: "no-store" }).then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status + " " + u); return r.json(); }); }
 
-  // Cache loaded week data to avoid reload when computing sidebar counts
   var WEEK_CACHE = {};
   function loadWeek(id) {
     if (WEEK_CACHE[id]) return Promise.resolve(WEEK_CACHE[id]);
@@ -239,107 +275,93 @@
       marketing: (s.marketing_community || []).length
     };
   }
-  function balanceCounts(arr) {
-    var kr = 0, gl = 0;
-    (arr || []).forEach(function (it) { if (it.tag === "KR") kr++; else if (it.tag === "GL") gl++; });
+  function balanceCounts(arr) { var kr=0, gl=0;
+    (arr || []).forEach(function (it) { if (it.tag==="KR") kr++; else if (it.tag==="GL") gl++; });
     return { kr: kr, gl: gl };
   }
 
-  // ----- Sidebar render -----
   function renderSidebar(reports, activeId) {
     var ul = document.getElementById("weekList");
-    if (!reports.length) {
-      ul.innerHTML = '<li class="empty-state">아직 도착한 보고서가 없습니다.</li>'; return; }
+    if (!reports.length) { ul.innerHTML = '<li class="empty-state">아직 도착한 보고서가 없습니다.</li>'; return; }
     ul.innerHTML = reports.map(function (r) {
       return '<li class="week-item' + (r.id === activeId ? ' active' : '') + '" data-id="' + esc(r.id) + '">' +
-        '<div class="week-title">' + esc(r.id) +
-          (r.seed ? ' <span class="badge badge-warn">SAMPLE</span>' : '') +
-        '</div>' +
-        '<div class="week-range">' + fmtMD(r.weekStart) + ' ~ ' + fmtMD(r.weekEnd) + '</div>' +
-        '<div class="week-counts" data-counts="' + esc(r.id) + '">…</div>' +
+        '<div class="week-id">' + esc(r.id) + '</div>' +
+        '<div class="week-range">' + fmtMD(r.weekStart) + ' — ' + fmtMD(r.weekEnd) + '</div>' +
+        '<div class="week-counts" data-counts="' + esc(r.id) + '">·</div>' +
       '</li>';
     }).join("");
     ul.querySelectorAll(".week-item").forEach(function (el) {
       el.addEventListener("click", function () { selectWeek(el.getAttribute("data-id")); });
     });
-    // Lazy-fill counts
     reports.forEach(function (r) {
       loadWeek(r.id).then(function (data) {
         var c = countSections(data);
         var node = document.querySelector('.week-counts[data-counts="' + r.id + '"]');
         if (!node) return;
-        var bits = [];
-        if (c.games) bits.push("신작 " + c.games);
-        if (c.charts) bits.push("차트 " + c.charts);
-        if (c.industry) bits.push("업계 " + c.industry);
-        if (c.marketing) bits.push("마케팅 " + c.marketing);
-        node.textContent = bits.length ? bits.join(" · ") : "—";
+        var total = c.games + c.charts + c.industry + c.marketing;
+        node.textContent = total ? (total + " ITEMS") : "—";
       }).catch(function () {});
     });
   }
 
-  // ----- Game (rich) card -----
-  function renderGameCard(g, isFeatured) {
+  function renderGameCard(g, idx, isFeatured) {
     function row(label, value) {
       if (!value) return "";
-      return '<div class="field-label">' + label + '</div>' +
-             '<div class="field-value">' + esc(value) + '</div>';
+      return '<div class="field-l">' + label + '</div><div class="field-v">' + esc(value) + '</div>';
     }
     var tagClass = g.tag === "KR" ? "kr" : (g.tag === "GL" ? "gl" : "");
-    var head = '<div class="game-head">' +
-      (g.emoji ? '<span class="game-emoji">' + esc(g.emoji) + '</span>' : '') +
-      '<div class="game-title-wrap">' +
-        (isFeatured ? '<span class="featured-tag">FEATURED</span>' : '') +
+    var head = '<div class="num">No. ' + pad2(idx) + '</div>' +
+      '<div class="game-head">' +
+        (g.emoji ? '<span class="game-emoji">' + esc(g.emoji) + '</span>' : '') +
         '<span class="game-title">' + esc(g.title || "") + '</span>' +
         (g.genre ? '<span class="game-genre">' + esc(g.genre) + '</span>' : '') +
         (g.tag ? ' ' + badge(g.tag) : '') +
-      '</div>' +
-    '</div>';
-    var fields = '<div class="field-grid">';
-    fields += row("📌 상태", g.status);
-    fields += row("📅 일정", g.schedule);
-    fields += row("💡 특징", g.features);
-    fields += row("🔥 차별화", g.differentiation);
-    fields += row("⚠️ 왜 중요", g.whyImportant);
-    if (g.sourceUrl) {
-      fields += '<div class="field-label">🔗 출처</div>' +
-                '<div class="field-value"><a href="' + esc(g.sourceUrl) + '" target="_blank" rel="noopener">' + esc(g.sourceUrl) + '</a></div>';
-    }
+      '</div>';
+    var fields = '<div class="field-list">';
+    fields += row("STATUS · 상태", g.status);
+    fields += row("SCHEDULE · 일정", g.schedule);
+    fields += row("FEATURES · 특징", g.features);
+    fields += row("EDGE · 차별화", g.differentiation);
+    fields += row("WHY · 왜 중요", g.whyImportant);
     fields += '</div>';
-    return '<div class="game-card ' + tagClass + (isFeatured ? ' featured' : '') + '">' + head + fields + '</div>';
+    var src = g.sourceUrl
+      ? '<a class="source-link" href="' + esc(g.sourceUrl) + '" target="_blank" rel="noopener">↗ ' + esc(shortHost(g.sourceUrl)) + '</a>'
+      : '';
+    return '<article class="game-card ' + tagClass + (isFeatured ? ' featured' : '') + '">' + head + fields + src + '</article>';
   }
 
-  // ----- Compact news card -----
-  function renderNewsCard(n) {
+  function renderNewsCard(n, idx) {
     var tagClass = n.tag === "KR" ? "kr" : (n.tag === "GL" ? "gl" : "");
-    var head = '<div class="news-head">' +
-      (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '') +
-      '<span class="news-title">' + esc(n.title || "") + '</span>' +
-      (n.tag ? ' ' + badge(n.tag) : '') +
-    '</div>';
+    var head = '<div class="news-num">No. ' + pad2(idx) + '</div>' +
+      '<div class="news-head">' +
+        (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '') +
+        '<span class="news-title">' + esc(n.title || "") + '</span>' +
+        (n.tag ? ' ' + badge(n.tag) : '') +
+      '</div>';
     var body = n.body ? '<div class="news-body">' + esc(n.body) + '</div>' : '';
     var src = '';
-    if (n.sourceUrl) src = '<div class="news-source">🔗 <a href="' + esc(n.sourceUrl) + '" target="_blank" rel="noopener">' + esc(shortHost(n.sourceUrl)) + '</a></div>';
-    else if (n.source) src = '<div class="news-source"><span class="host">출처: ' + esc(n.source) + '</span></div>';
-    return '<div class="news-card ' + tagClass + '">' + head + body + src + '</div>';
+    if (n.sourceUrl) src = '<div class="news-source">↗ <a href="' + esc(n.sourceUrl) + '" target="_blank" rel="noopener">' + esc(shortHost(n.sourceUrl)) + '</a></div>';
+    else if (n.source) src = '<div class="news-source">출처: ' + esc(n.source) + '</div>';
+    return '<article class="news-card ' + tagClass + '">' + head + body + src + '</article>';
   }
 
-  // ----- Section render -----
-  function renderSectionHdr(icon, title, items) {
+  function renderSectionHdr(num, title, sub, items) {
     var bal = balanceCounts(items);
-    var n = items.length;
     return '<div class="section-hdr">' +
-      '<span class="icon">' + icon + '</span>' +
-      '<span class="title">' + esc(title) + '</span>' +
-      '<span class="count">' + n + '</span>' +
-      '<span class="spacer"></span>' +
-      '<span class="balance">' +
-        (bal.kr ? '<span class="balance-pill kr">KR ' + bal.kr + '</span>' : '') +
-        (bal.gl ? '<span class="balance-pill gl">GL ' + bal.gl + '</span>' : '') +
-      '</span>' +
+      '<div class="section-hdr-left">' +
+        '<div class="section-num">' + num + '</div>' +
+        '<div class="section-title-block">' +
+          '<div class="section-title">' + esc(title) + '</div>' +
+          '<div class="section-sub">' + esc(sub) + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="section-balance">' +
+        '<span class="bal-pill total">총 ' + items.length + '건</span>' +
+        (bal.kr ? '<span class="bal-pill kr">KR ' + bal.kr + '</span>' : '') +
+        (bal.gl ? '<span class="bal-pill gl">GL ' + bal.gl + '</span>' : '') +
+      '</div>' +
     '</div>';
   }
-  function renderEmpty() { return '<div class="empty-section">이번 주 관련 항목 없음</div>'; }
 
   function renderWeek(r) {
     var sec = r.sections || {};
@@ -348,58 +370,75 @@
     var industry = sec.industry_news || [];
     var marketing = sec.marketing_community || [];
 
-    // HERO
-    var hero = '<div class="hero">' +
-      '<div class="hero-row">' +
-        '<div class="hero-id">' +
-          '<span class="label">Weekly Brief</span>' +
-          '<span class="id">' + esc(r.id) + (r.seed ? '<span class="badge-sample">SAMPLE</span>' : '') + '</span>' +
-          '<span class="range">' + fmtFull(r.weekStart, r.weekEnd) + '</span>' +
+    // Update TOC
+    var toc = document.getElementById("tocBlock");
+    if (toc) {
+      toc.style.display = "block";
+      document.getElementById("cnt-games").textContent = games.length;
+      document.getElementById("cnt-charts").textContent = charts.length;
+      document.getElementById("cnt-industry").textContent = industry.length;
+      document.getElementById("cnt-marketing").textContent = marketing.length;
+    }
+
+    // MASTHEAD
+    var masthead =
+      '<header class="masthead">' +
+        '<div class="masthead-overline">Issue ' + esc(r.id) + (r.seed ? ' · SAMPLE' : '') + '</div>' +
+        '<h1 class="masthead-title">' + esc(r.title || "이번 주 모바일 게임 동향 요약") + '</h1>' +
+        '<div class="masthead-id-line">' +
+          '<span class="masthead-id">' + esc(r.id) + '</span>' +
+          '<span class="masthead-range">' + fmtFull(r.weekStart, r.weekEnd) + '</span>' +
+          (r.publishedAt ? '<span class="masthead-meta">게시 ' + esc(r.publishedAt.split("T")[0]) + '</span>' : '') +
         '</div>' +
-        '<div class="hero-body">' +
-          '<div class="hero-summary-label">📝 이번 주 한눈에</div>' +
-          '<div class="hero-summary">' + esc(r.summary || "요약이 준비되지 않았습니다.") + '</div>' +
-          '<div class="hero-stats">' +
-            '<span class="stat-pill">🎮 신작·업데이트 <span class="num">' + games.length + '</span></span>' +
-            '<span class="stat-pill">📊 차트 <span class="num">' + charts.length + '</span></span>' +
-            '<span class="stat-pill">📰 업계 <span class="num">' + industry.length + '</span></span>' +
-            '<span class="stat-pill">💬 마케팅 <span class="num">' + marketing.length + '</span></span>' +
-          '</div>' +
+        (r.summary ? '<p class="masthead-summary">' + esc(r.summary) + '</p>' : '') +
+        '<div class="stat-row">' +
+          '<div class="stat"><div class="stat-num">' + games.length + '</div><div class="stat-label">신작 · 업데이트</div></div>' +
+          '<div class="stat"><div class="stat-num">' + charts.length + '</div><div class="stat-label">차트 · 순위</div></div>' +
+          '<div class="stat"><div class="stat-num">' + industry.length + '</div><div class="stat-label">업계 뉴스</div></div>' +
+          '<div class="stat"><div class="stat-num">' + marketing.length + '</div><div class="stat-label">마케팅 · 커뮤니티</div></div>' +
         '</div>' +
-      '</div>' +
-    '</div>';
+      '</header>';
+
+    var content = '<div class="content">';
 
     // GAMES
-    var gamesHtml = '';
     if (games.length) {
-      gamesHtml += renderSectionHdr("🎮", "신작 · 업데이트 · CBT", games);
-      gamesHtml += '<div class="games-stack">';
-      games.forEach(function (g, i) { gamesHtml += renderGameCard(g, i === 0); });
-      gamesHtml += '</div>';
+      content += '<section class="section" id="sec-games">';
+      content += renderSectionHdr("01", "신작 · 업데이트 · CBT", "Launches & Major Updates", games);
+      content += '<div class="games">';
+      games.forEach(function (g, i) { content += renderGameCard(g, i + 1, i === 0); });
+      content += '</div></section>';
     }
     // CHARTS
-    var chartsHtml = '';
     if (charts.length) {
-      chartsHtml += renderSectionHdr("📊", "차트 · 순위 변화", charts);
-      chartsHtml += '<div class="compact-grid">' + charts.map(renderNewsCard).join("") + '</div>';
+      content += '<section class="section" id="sec-charts">';
+      content += renderSectionHdr("02", "차트 · 순위 변화", "Charts & Rankings", charts);
+      content += '<div class="compact-grid">';
+      charts.forEach(function (n, i) { content += renderNewsCard(n, i + 1); });
+      content += '</div></section>';
     }
     // INDUSTRY
-    var industryHtml = '';
     if (industry.length) {
-      industryHtml += renderSectionHdr("📰", "업계 뉴스 (M&A · 투자 · 인사)", industry);
-      industryHtml += '<div class="compact-grid">' + industry.map(renderNewsCard).join("") + '</div>';
+      content += '<section class="section" id="sec-industry">';
+      content += renderSectionHdr("03", "업계 뉴스", "M&A · Investment · Financials · People", industry);
+      content += '<div class="compact-grid">';
+      industry.forEach(function (n, i) { content += renderNewsCard(n, i + 1); });
+      content += '</div></section>';
     }
     // MARKETING
-    var marketingHtml = '';
     if (marketing.length) {
-      marketingHtml += renderSectionHdr("💬", "마케팅 · 커뮤니티 동향", marketing);
-      marketingHtml += '<div class="compact-grid">' + marketing.map(renderNewsCard).join("") + '</div>';
+      content += '<section class="section" id="sec-marketing">';
+      content += renderSectionHdr("04", "마케팅 · 커뮤니티 동향", "Marketing & Community", marketing);
+      content += '<div class="compact-grid">';
+      marketing.forEach(function (n, i) { content += renderNewsCard(n, i + 1); });
+      content += '</div></section>';
     }
 
-    var footer = '<div class="footer-note">다음 보고서는 다음 월요일 09:00에 추가됩니다.  ·  ' +
+    content += '<div class="footer-note">다음 호는 다음 월요일 09:00 발행.  ·  ' +
       '<a href="https://github.com/joonho78910/weekly-gaming-brief" target="_blank" rel="noopener">GitHub</a></div>';
+    content += '</div>';
 
-    document.getElementById("main").innerHTML = hero + gamesHtml + chartsHtml + industryHtml + marketingHtml + footer;
+    document.getElementById("main").innerHTML = masthead + content;
   }
 
   function selectWeek(id) {
@@ -410,9 +449,18 @@
     loadWeek(id).then(function (r) {
       renderWeek(r);
       try { localStorage.setItem("wgb_last_viewed", id); } catch (e) {}
+      // TOC scroll bindings
+      document.querySelectorAll(".toc-item").forEach(function (el) {
+        el.onclick = function () {
+          var key = el.getAttribute("data-toc");
+          var map = { games: "sec-games", charts: "sec-charts", industry: "sec-industry", marketing: "sec-marketing" };
+          var target = document.getElementById(map[key]);
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+      });
     }).catch(function (err) {
       document.getElementById("main").innerHTML =
-        '<div class="placeholder"><div class="icon">⚠️</div><h2>보고서를 불러오지 못했습니다</h2><div>' + esc(err.message) + '</div></div>';
+        '<div class="content"><div class="placeholder"><div class="icon">⚠️</div><h2>보고서를 불러오지 못했습니다</h2><div>' + esc(err.message) + '</div></div></div>';
     });
   }
 
@@ -420,10 +468,9 @@
   fetchJson(INDEX_URL).then(function (idx) {
     var reports = (idx.reports || []).slice().sort(function (a, b) { return a.weekStart < b.weekStart ? 1 : -1; });
     if (!reports.length) {
-      document.getElementById("weekList").innerHTML =
-        '<li class="empty-state">아직 도착한 보고서가 없습니다.<br>매주 월요일 09:00에 자동 추가됩니다.</li>';
+      document.getElementById("weekList").innerHTML = '<li class="empty-state">아직 도착한 보고서가 없습니다.<br>매주 월요일 09:00에 자동 추가됩니다.</li>';
       document.getElementById("main").innerHTML =
-        '<div class="placeholder"><div class="icon">⏳</div><h2>아직 도착한 보고서가 없습니다</h2><div>매주 월요일 09:00에 자동으로 추가됩니다.</div></div>';
+        '<div class="content"><div class="placeholder"><div class="icon">⏳</div><h2>아직 도착한 보고서가 없습니다</h2><div>매주 월요일 09:00에 자동으로 추가됩니다.</div></div></div>';
       return;
     }
     var last = null;
@@ -438,14 +485,14 @@
       if (v.lastBuild && v.lastBuild.targetWeek) verLabel += " · " + v.lastBuild.targetWeek;
       if (v.lastBuild && v.lastBuild.n) verLabel += " · build " + v.lastBuild.n;
       meta.innerHTML =
-        '<span class="meta-chip">' + reports.length + '개 주차 아카이브</span>' +
-        '<span class="meta-chip">' + esc(verLabel) + '</span>' +
-        '<span class="meta-chip live">매주 월 09:00 자동 갱신</span>';
+        '<span class="chip">' + reports.length + ' Weeks</span>' +
+        '<span class="chip">' + esc(verLabel) + '</span>' +
+        '<span class="chip live">매주 월 09:00 자동 갱신</span>';
     }).catch(function () {});
   }).catch(function (err) {
     document.getElementById("weekList").innerHTML = '<li class="empty-state">로드 실패</li>';
     document.getElementById("main").innerHTML =
-      '<div class="placeholder"><div class="icon">⚠️</div><h2>인덱스를 불러오지 못했습니다</h2><div>' + esc(err.message) + '</div></div>';
+      '<div class="content"><div class="placeholder"><div class="icon">⚠️</div><h2>인덱스를 불러오지 못했습니다</h2><div>' + esc(err.message) + '</div></div></div>';
   });
 })();
 </script>
