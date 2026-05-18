@@ -1,0 +1,11 @@
+{
+    "version":  "0.1",
+    "lastBuild":  {
+                      "targetWeek":  "2026-W19",
+                      "n":  1,
+                      "uploadedAt":  "2026-05-18T10:26:29+09:00"
+                  },
+    "buildsByWeek":  {
+                         "2026-W19":  1
+                     }
+}
