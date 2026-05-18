@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주간 모바일 게임 동향 브리프</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root { color-scheme: light;
+    --bg:#F4F5F7; --panel:#FFFFFF; --border:#E4E7EB; --border-soft:#EEF0F3;
+    --text:#1A1F2A; --text-strong:#0F1419; --muted:#6B7280; --subtle:#9AA3AF;
+    --primary:#1F3A5F; --primary-soft:#E8EEF6;
+    --kr:#C9302C; --kr-soft:#FDECEC;
+    --gl:#2D7DD2; --gl-soft:#E5F0FB;
+    --warn:#B26A00; --warn-soft:#FDF1E1;
+    --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Segoe UI",Arial,sans-serif;
+    background:var(--bg); color:var(--text); font-size:14px; line-height:1.6; }
+  a { color:var(--primary); text-decoration:none; word-break:break-all; }
+  a:hover { text-decoration:underline; }
+  .topbar { background:var(--panel); border-bottom:1px solid var(--border); padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .brand { font-weight:700; font-size:17px; color:var(--primary); letter-spacing:-0.2px; }
+  .brand-sub { color:var(--muted); font-size:12px; margin-left:8px; font-weight:500; }
+  .topbar-meta { color:var(--muted); font-size:12px; }
+  .layout { display:flex; min-height:calc(100vh - 58px); }
+  .sidebar { width:240px; background:var(--panel); border-right:1px solid var(--border); padding:16px 12px; flex-shrink:0; }
+  .sidebar h3 { margin:6px 8px 10px; font-size:11px; text-transform:uppercase; letter-spacing:0.8px; color:var(--subtle); font-weight:600; }
+  .week-list { list-style:none; margin:0; padding:0; }
+  .week-item { padding:9px 11px; border-radius:7px; cursor:pointer; margin-bottom:3px; transition:background .15s; }
+  .week-item:hover { background:var(--bg); }
+  .week-item.active { background:var(--primary-soft); }
+  .week-item.active .week-title { color:var(--primary); font-weight:600; }
+  .week-title { font-size:13px; color:var(--text); }
+  .week-range { font-size:11px; color:var(--muted); margin-top:2px; }
+  .empty-state { padding:12px; color:var(--muted); font-size:12px; }
+  .main { flex:1; padding:24px 32px 60px; max-width:820px; }
+  .week-header { margin-bottom:20px; }
+  .week-header h1 { margin:0 0 4px; font-size:22px; letter-spacing:-0.3px; color:var(--primary);
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .week-header .range { color:var(--muted); font-size:13px; font-weight:400; }
+  .summary { background:linear-gradient(180deg, #FBFCFD 0%, #F6F8FB 100%);
+    border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-bottom:20px;
+    box-shadow:var(--shadow); }
+  .summary-label { font-size:11px; text-transform:uppercase; letter-spacing:0.8px; color:var(--subtle); font-weight:700; margin-bottom:6px; }
+  .summary-text { font-size:13.5px; line-height:1.65; color:var(--text-strong); }
+  .section-divider { display:flex; align-items:center; gap:10px; margin:28px 0 14px; }
+  .section-divider .label { font-size:12px; font-weight:700; color:var(--primary); letter-spacing:0.4px; text-transform:uppercase; }
+  .section-divider .line { flex:1; height:1px; background:var(--border); }
+  .game-card { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:16px 18px;
+    margin-bottom:10px; box-shadow:var(--shadow); }
+  .game-head { display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+  .game-emoji { font-size:20px; line-height:1; }
+  .game-title { font-size:15.5px; font-weight:700; color:var(--text-strong); letter-spacing:-0.2px; }
+  .game-dash { color:var(--subtle); margin:0 2px; }
+  .game-genre { color:var(--muted); font-size:13.5px; }
+  .field { display:flex; gap:8px; padding:4px 0; align-items:flex-start; }
+  .field-label { flex-shrink:0; font-weight:600; color:var(--text); font-size:12.5px; min-width:78px; padding-top:1px; }
+  .field-value { flex:1; font-size:13.5px; line-height:1.6; color:var(--text); word-break:break-word; }
+  .field-link a { color:var(--gl); font-size:12.5px; }
+  .news-card { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 16px;
+    margin-bottom:8px; box-shadow:var(--shadow); }
+  .news-head { display:flex; align-items:center; gap:8px; margin-bottom:6px; flex-wrap:wrap; }
+  .news-emoji { font-size:17px; line-height:1; }
+  .news-title { font-size:14.5px; font-weight:700; color:var(--text-strong); }
+  .news-body { font-size:13.5px; line-height:1.65; color:var(--text); }
+  .news-source { margin-top:6px; font-size:12px; }
+  .news-source a { color:var(--gl); }
+  .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; letter-spacing:0.3px; vertical-align:middle; }
+  .badge-kr { background:var(--kr-soft); color:var(--kr); }
+  .badge-gl { background:var(--gl-soft); color:var(--gl); }
+  .badge-warn { background:var(--warn-soft); color:var(--warn); }
+  .hr-chat { border:none; height:1px;
+    background:repeating-linear-gradient(90deg, var(--border-soft) 0, var(--border-soft) 4px, transparent 4px, transparent 7px);
+    margin:14px 0; }
+  .placeholder { background:var(--panel); border:1px dashed var(--border); border-radius:10px;
+    padding:40px 24px; text-align:center; color:var(--muted); }
+  .placeholder .icon { font-size:32px; margin-bottom:8px; opacity:0.6; }
+  .placeholder h2 { color:var(--text); font-size:16px; margin:8px 0 6px; }
+  .footer-note { text-align:center; color:var(--subtle); font-size:11px; padding:24px; }
+  .loading { padding:40px; text-align:center; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>
+    <span class="brand">주간 모바일 게임 동향 브리프</span>
+    <span class="brand-sub">Weekly Mobile Gaming Brief</span>
+  </div>
+  <div class="topbar-meta" id="topbar-meta">매주 월요일 09:00 자동 갱신</div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>주차 아카이브</h3>
+    <ul class="week-list" id="weekList"><li class="empty-state">로딩 중...</li></ul>
+  </aside>
+  <main class="main" id="main"><div class="loading">데이터 로딩 중...</div></main>
+</div>
+
+<script>
+(function () {
+  var INDEX_URL  = "./data/index.json";
+  var WEEK_URL   = function (id) { return "./data/" + id + ".json"; };
+  var VER_URL    = "./data/version.json";
+
+  function esc(s) {
+    if (s == null) return "";
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" })[c];
+    });
+  }
+  function fmtMD(d) { var x = new Date(d + "T00:00:00"); return (x.getMonth()+1) + "/" + x.getDate(); }
+  function fmtFull(s, e) { return s.replaceAll("-", ".") + " ~ " + e.replaceAll("-", "."); }
+  function badge(tag) {
+    if (tag === "KR") return '<span class="badge badge-kr">KR</span>';
+    if (tag === "GL") return '<span class="badge badge-gl">GL</span>';
+    return "";
+  }
+  function shortHost(url) { try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return url; } }
+
+  function cacheBust(url) { return url + (url.indexOf("?") >= 0 ? "&" : "?") + "_=" + Date.now(); }
+
+  function fetchJson(url) {
+    return fetch(cacheBust(url), { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status + " " + url);
+      return r.json();
+    });
+  }
+
+  function renderSidebar(reports, activeId) {
+    var ul = document.getElementById("weekList");
+    if (!reports.length) {
+      ul.innerHTML = '<li class="empty-state">아직 도착한 보고서가 없습니다.</li>';
+      return;
+    }
+    ul.innerHTML = reports.map(function (r) {
+      return '<li class="week-item' + (r.id === activeId ? ' active' : '') + '" data-id="' + esc(r.id) + '">' +
+        '<div class="week-title">' + esc(r.id) +
+          (r.seed ? '  <span class="badge badge-warn" style="margin-left:4px;">SAMPLE</span>' : '') +
+        '</div>' +
+        '<div class="week-range">' + fmtMD(r.weekStart) + ' ~ ' + fmtMD(r.weekEnd) + '</div>' +
+      '</li>';
+    }).join("");
+    ul.querySelectorAll(".week-item").forEach(function (el) {
+      el.addEventListener("click", function () { selectWeek(el.getAttribute("data-id")); });
+    });
+  }
+
+  function renderGameCard(g) {
+    function row(label, value) {
+      if (!value) return "";
+      return '<div class="field"><span class="field-label">' + label + '</span><span class="field-value">' + esc(value) + '</span></div>';
+    }
+    var head = '<div class="game-head">' +
+      (g.emoji ? '<span class="game-emoji">' + esc(g.emoji) + '</span>' : '') +
+      '<span class="game-title">' + esc(g.title || "") + '</span>' +
+      (g.genre ? '<span class="game-dash">—</span><span class="game-genre">' + esc(g.genre) + '</span>' : '') +
+      (g.tag ? ' ' + badge(g.tag) : '') +
+    '</div>';
+    var fields = '';
+    fields += row("📌 상태", g.status);
+    fields += row("📅 일정", g.schedule);
+    fields += row("💡 특징", g.features);
+    fields += row("🔥 차별화", g.differentiation);
+    fields += row("⚠️ 왜 중요", g.whyImportant);
+    if (g.sourceUrl) {
+      fields += '<div class="field">' +
+        '<span class="field-label">🔗 출처</span>' +
+        '<span class="field-value field-link"><a href="' + esc(g.sourceUrl) + '" target="_blank" rel="noopener">' + esc(g.sourceUrl) + '</a></span>' +
+      '</div>';
+    }
+    return '<div class="game-card">' + head + fields + '</div>';
+  }
+
+  function renderNewsCard(n) {
+    var head = '<div class="news-head">' +
+      (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '') +
+      '<span class="news-title">' + esc(n.title || "") + '</span>' +
+      (n.tag ? ' ' + badge(n.tag) : '') +
+    '</div>';
+    var body = n.body ? '<div class="news-body">' + esc(n.body) + '</div>' : '';
+    var src = '';
+    if (n.sourceUrl) src = '<div class="news-source">🔗 <a href="' + esc(n.sourceUrl) + '" target="_blank" rel="noopener">' + esc(shortHost(n.sourceUrl)) + '</a></div>';
+    else if (n.source) src = '<div class="news-source">출처: ' + esc(n.source) + '</div>';
+    return '<div class="news-card">' + head + body + src + '</div>';
+  }
+
+  function joinItems(items, renderer) {
+    return items.map(function (it, i) {
+      return renderer(it) + (i < items.length - 1 ? '<hr class="hr-chat"/>' : '');
+    }).join("");
+  }
+
+  function divider(label) {
+    return '<div class="section-divider"><span class="label">' + esc(label) + '</span><span class="line"></span></div>';
+  }
+
+  function renderWeek(r) {
+    var html = '';
+    html += '<div class="week-header">' +
+              '<h1>' + esc(r.id) +
+                ' <span class="range">·  ' + fmtFull(r.weekStart, r.weekEnd) + '</span>' +
+                (r.seed ? '  <span class="badge badge-warn" style="font-size:11px;">SAMPLE</span>' : '') +
+              '</h1>' +
+            '</div>';
+    if (r.summary) {
+      html += '<div class="summary">' +
+                '<div class="summary-label">📝 이번 주 한눈에</div>' +
+                '<div class="summary-text">' + esc(r.summary) + '</div>' +
+              '</div>';
+    }
+    var sec = r.sections || {};
+    if (sec.launches_updates && sec.launches_updates.length) {
+      html += divider("🎮 신작 · 업데이트 · CBT");
+      html += joinItems(sec.launches_updates, renderGameCard);
+    }
+    if (sec.chart_changes && sec.chart_changes.length) {
+      html += divider("📊 차트 · 순위 변화");
+      html += joinItems(sec.chart_changes, renderNewsCard);
+    }
+    if (sec.industry_news && sec.industry_news.length) {
+      html += divider("📰 업계 뉴스 (M&A · 투자 · 인사)");
+      html += joinItems(sec.industry_news, renderNewsCard);
+    }
+    if (sec.marketing_community && sec.marketing_community.length) {
+      html += divider("💬 마케팅 · 커뮤니티 동향");
+      html += joinItems(sec.marketing_community, renderNewsCard);
+    }
+    html += '<div class="footer-note">다음 보고서는 다음 월요일 09:00에 추가됩니다.</div>';
+    document.getElementById("main").innerHTML = html;
+  }
+
+  function selectWeek(id) {
+    document.querySelectorAll(".week-item").forEach(function (el) {
+      el.classList.toggle("active", el.getAttribute("data-id") === id);
+    });
+    document.getElementById("main").innerHTML = '<div class="loading">' + esc(id) + ' 보고서 로딩 중...</div>';
+    fetchJson(WEEK_URL(id)).then(function (r) {
+      renderWeek(r);
+      try { localStorage.setItem("wgb_last_viewed", id); } catch (e) {}
+    }).catch(function (err) {
+      document.getElementById("main").innerHTML =
+        '<div class="placeholder"><div class="icon">⚠️</div><h2>보고서를 불러오지 못했습니다</h2><div>' + esc(err.message) + '</div></div>';
+    });
+  }
+
+  // ----- Boot -----
+  fetchJson(INDEX_URL).then(function (idx) {
+    var reports = (idx.reports || []).slice().sort(function (a, b) { return a.weekStart < b.weekStart ? 1 : -1; });
+    if (!reports.length) {
+      document.getElementById("weekList").innerHTML = '<li class="empty-state">아직 도착한 보고서가 없습니다.<br>매주 월요일 09:00에 자동 추가됩니다.</li>';
+      document.getElementById("main").innerHTML =
+        '<div class="placeholder"><div class="icon">⏳</div><h2>아직 도착한 보고서가 없습니다</h2><div>매주 월요일 09:00에 자동으로 추가됩니다.</div></div>';
+      return;
+    }
+    var last = null;
+    try { last = localStorage.getItem("wgb_last_viewed"); } catch (e) {}
+    var initial = (last && reports.find(function (x) { return x.id === last; })) ? last : reports[0].id;
+    renderSidebar(reports, initial);
+    selectWeek(initial);
+
+    // Version badge in topbar
+    fetchJson(VER_URL).then(function (v) {
+      var label = "v" + (v.version || "?");
+      if (v.lastBuild && v.lastBuild.targetWeek) label += "  ·  " + v.lastBuild.targetWeek;
+      if (v.lastBuild && v.lastBuild.n) label += " build " + v.lastBuild.n;
+      document.getElementById("topbar-meta").textContent =
+        "매주 월요일 09:00 자동 갱신  ·  " + reports.length + "개 주차  ·  " + label;
+    }).catch(function () {});
+  }).catch(function (err) {
+    document.getElementById("weekList").innerHTML = '<li class="empty-state">로드 실패</li>';
+    document.getElementById("main").innerHTML =
+      '<div class="placeholder"><div class="icon">⚠️</div><h2>인덱스를 불러오지 못했습니다</h2><div>' + esc(err.message) + '</div></div>';
+  });
+})();
+</script>
+</body>
+</html>
