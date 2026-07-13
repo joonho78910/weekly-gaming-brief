@@ -543,8 +543,8 @@
     var head = '<div class="news-num">No. ' + pad2(idx) + '</div>' +
       '<div class="news-head">' +
         (n.logoUrl
-          ? '<img class="news-icon" src="' + esc(n.logoUrl) + '" alt="" loading="lazy" style="display:none" onload="this.style.display=\'inline-block\';var e=this.nextElementSibling;if(e&&e.className===\'news-emoji\')e.style.display=\'none\';" onerror="this.remove();">' +
-            (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '')
+          ? '<img class="news-icon" src="' + esc(n.logoUrl) + '" alt="" loading="lazy" onerror="var e=this.nextElementSibling;if(e&&e.className===\'news-emoji\')e.style.display=\'inline\';this.remove();" onload="if(!this.naturalWidth){var e=this.nextElementSibling;if(e&&e.className===\'news-emoji\')e.style.display=\'inline\';this.remove();}">' +
+            (n.emoji ? '<span class="news-emoji" style="display:none">' + esc(n.emoji) + '</span>' : '')
           : (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '')) +
         '<span class="news-title">' + esc(n.title || "") + '</span>' +
         (n.tag ? ' ' + badge(n.tag) : '') +
