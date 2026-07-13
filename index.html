@@ -520,7 +520,7 @@
         (g.iconUrl
           ? '<img class="game-icon" src="' + esc(g.iconUrl) + '" alt="" loading="lazy" onerror="if(this.nextElementSibling&&this.nextElementSibling.className===\'game-emoji\'){this.nextElementSibling.style.display=\'inline\';}this.remove();">' +
             (g.emoji ? '<span class="game-emoji" style="display:none">' + esc(g.emoji) + '</span>' : '')
-          : (g.emoji ? '<span class="game-emoji" data-icon-term="' + esc(iconTermFor(g.title)) + '">' + esc(g.emoji) + '</span>' : '')) +
+          : (g.emoji ? '<span class="game-emoji" data-icon-term="' + esc(g.iconTerm || iconTermFor(g.title)) + '">' + esc(g.emoji) + '</span>' : '')) +
         '<span class="game-title">' + esc(g.title || "") + '</span>' +
         (g.genre ? '<span class="game-genre">' + esc(g.genre) + '</span>' : '') +
         (g.tag ? ' ' + badge(g.tag) : '') +
