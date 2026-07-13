@@ -469,7 +469,7 @@
   function __iconApply(span, url) {
     if (!span || !span.parentNode) return;
     var img = document.createElement("img");
-    img.className = "game-icon";
+    img.className = (span.className && span.className.indexOf("news-emoji") !== -1) ? "news-icon" : "game-icon";
     img.alt = "";
     img.loading = "lazy";
     img.onerror = function () { span.style.display = "inline"; if (img.parentNode) img.parentNode.removeChild(img); };
@@ -542,10 +542,12 @@
     var tagClass = n.tag === "KR" ? "kr" : (n.tag === "GL" ? "gl" : "");
     var head = '<div class="news-num">No. ' + pad2(idx) + '</div>' +
       '<div class="news-head">' +
-        (n.logoUrl
-          ? '<img class="news-icon" src="' + esc(n.logoUrl) + '" alt="" loading="lazy" onerror="var e=this.nextElementSibling;if(e&&e.className===\'news-emoji\')e.style.display=\'inline\';this.remove();" onload="if(!this.naturalWidth){var e=this.nextElementSibling;if(e&&e.className===\'news-emoji\')e.style.display=\'inline\';this.remove();}">' +
-            (n.emoji ? '<span class="news-emoji" style="display:none">' + esc(n.emoji) + '</span>' : '')
-          : (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '')) +
+        (n.iconTerm
+          ? (n.emoji ? '<span class="news-emoji" data-icon-term="' + esc(n.iconTerm) + '">' + esc(n.emoji) + '</span>' : '')
+          : n.logoUrl
+            ? '<img class="news-icon" src="' + esc(n.logoUrl) + '" alt="" loading="lazy" onerror="var e=this.nextElementSibling;if(e&&e.className===\'news-emoji\')e.style.display=\'inline\';this.remove();" onload="if(!this.naturalWidth){var e=this.nextElementSibling;if(e&&e.className===\'news-emoji\')e.style.display=\'inline\';this.remove();}">' +
+              (n.emoji ? '<span class="news-emoji" style="display:none">' + esc(n.emoji) + '</span>' : '')
+            : (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '')) +
         '<span class="news-title">' + esc(n.title || "") + '</span>' +
         (n.tag ? ' ' + badge(n.tag) : '') +
       '</div>';
