@@ -184,6 +184,9 @@
   .news-num { font-size:10.5px; font-weight:800; color:var(--gold); letter-spacing:1.2px; font-variant-numeric:tabular-nums; }
   .news-head { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
   .news-emoji { font-size:17px; line-height:1; }
+  .news-icon { width:20px; height:20px; border-radius:5px; vertical-align:middle;
+    align-self:center; box-shadow:0 1px 2px rgba(0,0,0,.12); background:#fff;
+    flex:0 0 auto; object-fit:contain; }
   .news-title { font-size:16px; font-weight:800; color:var(--text-strong); letter-spacing:-0.4px;
     line-height:1.32; flex:1; min-width:0; }
   .news-body { font-size:13px; line-height:1.65; color:var(--text); }
@@ -539,7 +542,10 @@
     var tagClass = n.tag === "KR" ? "kr" : (n.tag === "GL" ? "gl" : "");
     var head = '<div class="news-num">No. ' + pad2(idx) + '</div>' +
       '<div class="news-head">' +
-        (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '') +
+        (n.logoUrl
+          ? '<img class="news-icon" src="' + esc(n.logoUrl) + '" alt="" loading="lazy" onerror="if(this.nextElementSibling&&this.nextElementSibling.className===\'news-emoji\'){this.nextElementSibling.style.display=\'inline\';}this.remove();">' +
+            (n.emoji ? '<span class="news-emoji" style="display:none">' + esc(n.emoji) + '</span>' : '')
+          : (n.emoji ? '<span class="news-emoji">' + esc(n.emoji) + '</span>' : '')) +
         '<span class="news-title">' + esc(n.title || "") + '</span>' +
         (n.tag ? ' ' + badge(n.tag) : '') +
       '</div>';
@@ -680,9 +686,10 @@
       return;
     }
 
+    var forceLatest = /[?&]latest(=|&|$)/.test(location.search) || location.hash === "#latest";
     var last = null;
     try { last = localStorage.getItem("wgb_last_viewed"); } catch (e) {}
-    var initial = (last && REPORTS_BY_ID[last]) ? last : REPORTS[0].id;
+    var initial = (!forceLatest && last && REPORTS_BY_ID[last]) ? last : REPORTS[0].id;
     var initReport = REPORTS_BY_ID[initial];
     var sd = new Date(initReport.weekStart + "T00:00:00");
     CAL_YEAR = sd.getFullYear(); CAL_MONTH = sd.getMonth();
