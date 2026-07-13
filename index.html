@@ -156,6 +156,9 @@
   .game-head { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
   .game-emoji { font-size:22px; line-height:1; }
   .game-card.featured .game-emoji { font-size:26px; }
+  .game-icon { width:34px; height:34px; border-radius:8px; vertical-align:middle;
+    align-self:center; box-shadow:0 1px 3px rgba(0,0,0,.14); background:#fff; flex:0 0 auto; }
+  .game-card.featured .game-icon { width:42px; height:42px; border-radius:10px; }
   .game-title { font-size:21px; font-weight:800; color:var(--text-strong); letter-spacing:-0.55px; line-height:1.2; }
   .game-card.featured .game-title { font-size:26px; letter-spacing:-0.9px; }
   .game-genre { color:var(--muted); font-size:13px; }
@@ -431,6 +434,78 @@
     });
   }
 
+
+  // --- Game icon auto-lookup (iTunes Search API via JSONP, cached in localStorage) ---
+  var __iconJsonpN = 0;
+  function iconTermFor(title) {
+    var t = String(title || "");
+    t = t.split("\u00d7")[0];                 // drop collab suffix after multiplication sign
+    t = t.replace(/[(\uff08\u2014].*$/, "");   // drop "(...)", full-width paren, em-dash tails
+    t = t.split(" - ")[0];
+    var hy = t.indexOf("\uae30-");               // "...키우기-부제" -> keep left side
+    if (hy > 2) t = t.slice(0, hy + 1);
+    t = t.replace(/\s*\d+(\.\d+)?\s*['\u2018\u2019].*$/, ""); // "6.6 'Luna VII'" tails
+    t = t.replace(/\s+\d*(\uc2dc\uc98c|\uc8fc\ub144).*$/, "").replace(/\s+\d+(\.\d+)?\s*$/, "");     // "시즌..." / "주년..." tails
+    return t.trim();
+  }
+  function __iconNorm(s) { return String(s || "").toLowerCase().replace(/[^0-9a-z\uac00-\ud7a3]/g, ""); }
+  function __iconMatches(term, trackName) {
+    var q = __iconNorm(term), t = __iconNorm(trackName);
+    if (!q || !t) return false;
+    return t.indexOf(q.slice(0, 4)) !== -1 || q.indexOf(t.slice(0, 4)) !== -1 || t.indexOf(q) !== -1 || q.indexOf(t) !== -1;
+  }
+  function __iconJsonp(url, cb) {
+    var name = "__wgbIconCb" + (__iconJsonpN++);
+    var s = document.createElement("script");
+    var done = false;
+    window[name] = function (data) { done = true; cb(data); try { delete window[name]; } catch (e) { window[name] = undefined; } if (s.parentNode) s.parentNode.removeChild(s); };
+    s.onerror = function () { if (!done) cb(null); if (s.parentNode) s.parentNode.removeChild(s); };
+    s.src = url + "&callback=" + name;
+    document.head.appendChild(s);
+  }
+  function __iconApply(span, url) {
+    if (!span || !span.parentNode) return;
+    var img = document.createElement("img");
+    img.className = "game-icon";
+    img.alt = "";
+    img.loading = "lazy";
+    img.onerror = function () { span.style.display = "inline"; if (img.parentNode) img.parentNode.removeChild(img); };
+    img.src = url;
+    span.parentNode.insertBefore(img, span);
+    span.style.display = "none";
+  }
+  function enhanceGameIcons() {
+    var spans = document.querySelectorAll("span[data-icon-term]");
+    var delay = 0;
+    Array.prototype.forEach.call(spans, function (span) {
+      var term = span.getAttribute("data-icon-term");
+      if (!term || term.length < 2) return;
+      var key = "wgb_icon_v1_" + term;
+      var cached = null;
+      try { cached = JSON.parse(localStorage.getItem(key) || "null"); } catch (e) {}
+      var now = Date.now();
+      if (cached && cached.t && now - cached.t < 30 * 24 * 3600 * 1000) {
+        if (cached.u) __iconApply(span, cached.u);   // cached miss (u:null) -> keep emoji
+        return;
+      }
+      setTimeout(function () {
+        var url = "https://itunes.apple.com/search?entity=software&country=kr&limit=3&term=" + encodeURIComponent(term);
+        __iconJsonp(url, function (data) {
+          var found = null;
+          if (data && data.results) {
+            for (var i = 0; i < data.results.length; i++) {
+              var r = data.results[i];
+              if (r && r.artworkUrl100 && __iconMatches(term, r.trackName)) { found = r.artworkUrl100.replace("100x100", "160x160"); break; }
+            }
+          }
+          try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), u: found })); } catch (e) {}
+          if (found) __iconApply(span, found);
+        });
+      }, delay);
+      delay += 350;
+    });
+  }
+
   function renderGameCard(g, idx, isFeatured) {
     function row(label, value) {
       if (!value) return "";
@@ -439,7 +514,10 @@
     var tagClass = g.tag === "KR" ? "kr" : (g.tag === "GL" ? "gl" : "");
     var head = '<div class="num">No. ' + pad2(idx) + '</div>' +
       '<div class="game-head">' +
-        (g.emoji ? '<span class="game-emoji">' + esc(g.emoji) + '</span>' : '') +
+        (g.iconUrl
+          ? '<img class="game-icon" src="' + esc(g.iconUrl) + '" alt="" loading="lazy" onerror="if(this.nextElementSibling&&this.nextElementSibling.className===\'game-emoji\'){this.nextElementSibling.style.display=\'inline\';}this.remove();">' +
+            (g.emoji ? '<span class="game-emoji" style="display:none">' + esc(g.emoji) + '</span>' : '')
+          : (g.emoji ? '<span class="game-emoji" data-icon-term="' + esc(iconTermFor(g.title)) + '">' + esc(g.emoji) + '</span>' : '')) +
         '<span class="game-title">' + esc(g.title || "") + '</span>' +
         (g.genre ? '<span class="game-genre">' + esc(g.genre) + '</span>' : '') +
         (g.tag ? ' ' + badge(g.tag) : '') +
@@ -560,6 +638,7 @@
     content += '</div></div>';
 
     document.getElementById("main").innerHTML = masthead + content;
+    enhanceGameIcons();
   }
 
   function selectWeek(id) {
