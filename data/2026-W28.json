@@ -116,7 +116,7 @@
         "tag": "KR",
         "body": "박관호 위메이드 의장의 중국계 투자 플랫폼 네오펄스 지분 매각을 계기로 '중국 자본의 K게임 침공' 우려가 확산됐다. 텐센트와 산하 계열은 시프트업 34.48%, 넷마블 18.37%, 크래프톤 14.1% 등 주요 게임사 지분을 보유해 미르·던전앤파이터·크로스파이어 등 중화권 인기 IP에 대한 영향력이 부각됐다.",
         "sourceUrl": "https://n.news.naver.com/mnews/article/022/0004141973?sid=101",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/wemade.com.ico"
+        "iconTerm": "나이트 크로우"
       },
       {
         "emoji": "💰",
@@ -124,7 +124,7 @@
         "tag": "KR",
         "body": "증권가는 크래프톤이 2분기 어닝 서프라이즈를 기록할 것으로 전망했다. PUBG IP의 글로벌 흥행 지속과 ADK 등 M&A로 편입한 자회사 연결 실적 반영이 두드러지며, 글로벌 주요 게임사 평균 대비 낮은 밸류에이션과 단일 IP 리스크 해소가 재평가 요인으로 거론됐다.",
         "sourceUrl": "http://www.hansbiz.co.kr/news/articleView.html?idxno=849303",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/krafton.com.ico"
+        "iconTerm": "배틀그라운드"
       },
       {
         "emoji": "🚀",
@@ -132,15 +132,14 @@
         "tag": "KR",
         "body": "엔씨소프트가 한국·대만에서 서비스 중인 '아이온2'의 글로벌 서버 출시 시점을 9월로 확정했다. 앞서 6월 9주년 업데이트를 전후로 '리니지M'이 구글·애플 앱마켓 매출 1위를 되찾고 'PC 리니지 클래식'이 PC방 점유율 20%대에 안착하는 등 리니지 IP가 엔씨 상반기 실적을 견인했다.",
         "sourceUrl": "https://n.news.naver.com/mnews/article/138/0002233856?sid=105",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/ncsoft.com.ico"
+        "iconTerm": "리니지M"
       },
       {
         "emoji": "🏢",
         "title": "넥써쓰-원스토어, 텐센트 미니게임 '원플레이' 도입",
         "tag": "KR",
         "body": "장현국 대표가 이끄는 넥써쓰와 원스토어가 텐센트의 미니게임(원플레이) 도입을 예고하며 10조 원 규모 시장 공략에 나섰다. 원플레이 게임은 별도 설치 없이 즉시 실행 가능해 접근성 측면에서 기존 모바일게임과 차별화되며, 원스토어의 핵심 콘텐츠 전략으로 육성될 전망이다.",
-        "sourceUrl": "https://www.khgames.co.kr/news/articleView.html?idxno=306275",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/onestore.co.kr.ico"
+        "sourceUrl": "https://www.khgames.co.kr/news/articleView.html?idxno=306275"
       },
       {
         "emoji": "🆕",
@@ -148,15 +147,14 @@
         "tag": "KR",
         "body": "컴투스홀딩스가 최근 턴제 수집형 RPG '스타 세일러'와 퍼즐 게임 '컬러스위퍼'를 출시했고, 컴투스는 MMORPG '제우스: 오만의 신' 사전예약에 돌입했다. '스타 세일러'는 출시 직후 구글플레이 인기 3위에 올랐고 양대 마켓 평점 4.7~4.8점을 기록하며 하반기 실적 반등의 발판을 다지고 있다.",
         "sourceUrl": "https://it.chosun.com/news/articleView.html?idxno=2023092165436",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/com2us.com.ico"
+        "iconTerm": "서머너즈 워"
       },
       {
         "emoji": "🇯🇵",
         "title": "국내 게임사, 도쿄게임쇼(TGS) 2026 대거 참가",
         "tag": "KR",
         "body": "크래프톤·넥슨·넷마블·스마일게이트·엔씨소프트 등 주요 게임사가 콘솔·서브컬처 신작을 앞세워 해외 게임쇼에 총출동한다. 크래프톤은 PUBG 스튜디오 미공개 신작과 '노 로우', '프로젝트 제타' 등 라인업을 준비했다. 대형 글로벌 신작을 선보일 독점 오프라인 플랫폼 공백 속에 도쿄게임쇼가 아시아 거점으로 부상했다.",
-        "sourceUrl": "https://www.asiaa.co.kr/news/articleView.html?idxno=254828",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/krafton.com.ico"
+        "sourceUrl": "https://www.asiaa.co.kr/news/articleView.html?idxno=254828"
       },
       {
         "emoji": "📊",
@@ -164,15 +162,14 @@
         "tag": "KR",
         "body": "아시아브랜드연구소 K-브랜드지수 게임사 부문에서 넥슨이 1위를 차지했고 크래프톤(2위), 넷마블(3위), NHN(4위), 컴투스(5위)가 뒤를 이었다. 신작 흥행 위주 평가에서 장기 IP 운영·재무 안정성을 함께 보는 방향으로 기준이 이동하고 있다는 분석이 함께 제시됐다.",
         "sourceUrl": "https://www.socialvalue.kr/news/view/1065570887657572",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/nexon.com.ico"
+        "iconTerm": "메이플스토리"
       },
       {
         "emoji": "🌐",
         "title": "웹 게임 플랫폼 Poki, MAU 1억 돌파",
         "tag": "GL",
         "body": "글로벌 웹 게임 플랫폼 Poki가 월간 활성 이용자(MAU) 1억 명을 넘어섰다고 2026 웹 게이밍 리포트를 통해 밝혔다. 2020년 1,000만 명에서 급성장한 수치로, 개발사의 53%가 12개월 내 모바일 게임의 웹 이식을 계획하는 등 인스턴트·HTML5 게임 시장 확대 흐름을 보여준다.",
-        "sourceUrl": "https://gamedevreports.substack.com/p/weekly-gaming-reports-recap-july-0f3",
-        "logoUrl": "https://icons.duckduckgo.com/ip3/poki.com.ico"
+        "sourceUrl": "https://gamedevreports.substack.com/p/weekly-gaming-reports-recap-july-0f3"
       }
     ],
     "marketing_community": [
