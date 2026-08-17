@@ -688,10 +688,8 @@
       return;
     }
 
-    var forceLatest = /[?&]latest(=|&|$)/.test(location.search) || location.hash === "#latest";
-    var last = null;
-    try { last = localStorage.getItem("wgb_last_viewed"); } catch (e) {}
-    var initial = (!forceLatest && last && REPORTS_BY_ID[last]) ? last : REPORTS[0].id;
+    // 접속 시 항상 최신 주차부터 표시한다. (저장된 '마지막으로 본 주차'는 초기 화면에 쓰지 않음)
+    var initial = REPORTS[0].id;
     var initReport = REPORTS_BY_ID[initial];
     var sd = new Date(initReport.weekStart + "T00:00:00");
     CAL_YEAR = sd.getFullYear(); CAL_MONTH = sd.getMonth();
