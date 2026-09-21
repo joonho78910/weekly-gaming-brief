@@ -1,11 +1,12 @@
 {
     "version":  "0.1",
     "lastBuild":  {
-                      "targetWeek":  "2026-W37",
+                      "targetWeek":  "2026-W38",
                       "n":  1,
-                      "uploadedAt":  "2026-09-14T09:45:01+09:00"
+                      "uploadedAt":  "2026-09-21T09:45:02+09:00"
                   },
     "buildsByWeek":  {
+                         "2026-W38":  1,
                          "2026-W37":  1,
                          "2026-W36":  1,
                          "2026-W35":  1,
