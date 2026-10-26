@@ -1,0 +1,194 @@
+{
+  "id": "2026-W43",
+  "weekStart": "2026-10-19",
+  "weekEnd": "2026-10-25",
+  "publishedAt": "2026-10-26T09:30:00+09:00",
+  "summary": "10월 19일~25일 국내에서는 플레이위드코리아의 모바일 MMORPG '씰M2'가 10/22 출시(사전예약 약 130만 명, 회사 발표 기준 출시 당일 양대 마켓 인기 1위)했고, 게임듀오의 '일랜시아 모바일'은 10/22 사전예약을 시작해 12/1 출시를 예고했다. 엔씨는 캐주얼 '행성파괴 냥냐냥'을 6개 지역에 출시했고(10/19), 시프트업의 '니케'는 4주년 방송(10/24)에서 신규 스토리와 캐릭터를 공개했다. 10/19 기준 국내 구글 매출은 '도깨비의세계'가 1위, '제우스: 오만의 신'이 2위였다. 글로벌에서는 슈퍼셀이 메타코어 인수를 마쳤고(10/19, 메타코어는 핀란드 최대 160개 직무 감축 발표), 스틸프런트가 전 킹 임원 마커스 제이콥스를 CEO로 선임했으며, PEGI는 유료 랜덤 아이템 게임을 16세 등급으로 상향 중이다.",
+  "sections": {
+    "launches_updates": [
+      {
+        "emoji": "🐾",
+        "title": "씰M2 — 국내 정식 출시, 출시 당일 양대 마켓 인기 1위",
+        "genre": "MMORPG",
+        "tag": "KR",
+        "status": "플레이위드게임즈가 개발하고 플레이위드코리아가 서비스하는 모바일 MMORPG '씰M2'가 10월 22일 오전 10시 국내 정식 서비스를 시작했다. 회사 발표 기준 사전예약 약 130만 명을 모았고, 앱스토어 인기 1위(10/19, 사전 다운로드 시작)·구글 플레이 인기 1위(10/20)에 이어 출시 당일 양대 마켓 인기 1위를 기록했다.",
+        "schedule": "10/19 사전 다운로드 시작 → 10/22 10:00 정식 서비스. PC 버전은 컴투스의 게임 플랫폼 '하이브'로 제공.",
+        "features": "'씰 온라인'·'씰M'의 카툰 렌더링 그래픽과 개그 액션을 계승했다. 클래스별 전투 방식을 차별화했고, 자동 전투 편의성에 직접 조작의 재미를 더했으며 펫 수집·육성을 파티 플레이와 경쟁 콘텐츠에 연결했다. 출시 보상으로 전체 이용자에게 희귀 코스튬·오파츠 랜덤 상자·펫큐브 등을 지급한다.",
+        "differentiation": "전작의 카툰풍 감성과 개그 코드를 유지한 채 클래스별 전투와 펫 육성을 결합해 기존 IP 팬층의 복귀를 노린다.",
+        "whyImportant": "출시 직후 인기 순위 1위는 회사 발표 기준이며, 인기 순위가 매출 순위로 이어지는지는 다음 주 구글 매출 차트에서 확인이 필요하다.",
+        "sourceUrl": "https://www.wikitree.co.kr/articles/1168578"
+      },
+      {
+        "emoji": "🎣",
+        "title": "일랜시아 모바일 — 사전예약 시작, 12월 1일 출시 예정",
+        "genre": "클래식 온라인 RPG [추정]",
+        "tag": "KR",
+        "status": "게임듀오가 서비스하는 '일랜시아 모바일'이 10월 22일 구글 플레이·앱스토어에서 사전예약을 시작했다. 원작 IP는 넥슨의 클래식 IP 개방 프로젝트 'NEXON Replay'를 통해 제공된다(개발사는 기사에 미기재).",
+        "schedule": "사전예약 10/22~ → 11/27부터 사전 다운로드·캐릭터 사전 생성 → 12/1 오전 11시 정식 출시(안드로이드·iOS·PC 런처).",
+        "features": "원작의 도트 그래픽·마을·사냥터를 구현했고, 무기 어빌리티를 올리면 무기에 맞는 직업으로 전직하는 성장 구조를 유지했다. 스킬북으로 직업별 전용 스킬을 익히며 필드 보스 등 협동 콘텐츠를 새로 추가했다. 'AI 모드'는 접속 종료 후에도 최대 24시간 서버에서 사냥을 이어가며 절전 모드를 지원한다.",
+        "differentiation": "넥슨이 IP를 개방하고 외부 퍼블리셔가 서비스를 맡는 구조의 모바일 복각 사례로, 모바일·PC 동시 지원을 내세운다.",
+        "whyImportant": "클래식 PC 온라인 게임 IP의 모바일 재출시 흐름을 보여주는 사례다.",
+        "sourceUrl": "https://www.betanews.net/article/view/beta202610220047"
+      },
+      {
+        "emoji": "🔫",
+        "title": "승리의 여신: 니케 — 4주년 방송, 신규 스토리·'마리안: 퀸' 공개",
+        "genre": "수집형 RPG (서브컬처)",
+        "tag": "KR",
+        "status": "시프트업이 개발한 '승리의 여신: 니케'가 10월 24일 레벨 인피니트 주관 4주년 기념 방송에서 신규 메인 스토리와 신규 캐릭터 '마리안: 퀸', '레드후드: 신살' 등을 공개했다.",
+        "schedule": "4주년 방송 10/24, 4주년 업데이트는 10/29 예정(PlayDay 보도). 옥외광고 10/30~11/1(용산 아이파크몰), 12월 AGF 2026(킨텍스) 참여.",
+        "features": "기념 이벤트는 마리안의 과거를 다루며 웨딩 콘셉트 코스튬, 전용 맵과 멀티 엔딩 텍스트 어드벤처 미니게임을 포함한다. 무료 뽑기 최대 230회, 로비 장식 슬롯 10→15개, 챔피언 아레나 정식 오픈, 리듬게임에 '스텔라 블레이드' 곡 22종 추가 등이 포함됐다.",
+        "differentiation": "4주년을 맞아 스토리·아레나·로비 콘텐츠를 동시에 확장하고 내년 3월 국내 오케스트라 콘서트까지 연계한다.",
+        "whyImportant": "장기 서비스 중인 서브컬처 슈팅 RPG가 무료 재화 대량 지급과 오프라인 행사로 4주년 이용자 접속을 끌어올리는 전형적 운영 사례다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1782333"
+      },
+      {
+        "emoji": "🪐",
+        "title": "행성파괴 냥냐냥 — 엔씨 모바일 캐주얼, 6개 지역 정식 출시",
+        "genre": "캐주얼",
+        "tag": "KR",
+        "status": "엔씨 자회사 베로플레이가 서비스하고 슈퍼래빗게임즈가 개발한 모바일 캐주얼 게임 '행성파괴 냥냐냥'이 10월 19일 한국·일본·대만·홍콩·마카오·필리핀에서 정식 출시됐다.",
+        "schedule": "안드로이드는 7월부터 일부 지역에서 소프트 론칭했고, 이번 출시에서 iOS를 추가했다.",
+        "features": "6개 지역 동시 서비스로 아시아권 캐주얼 이용자를 겨냥한다(세부 게임 시스템은 출처 미기재).",
+        "differentiation": "엔씨가 MMORPG 중심 라인업 밖에서 자회사를 통해 캐주얼 장르를 시도한다.",
+        "whyImportant": "소프트 론칭 약 3개월 후 아시아 6개 지역 동시 출시로 확장한 점이 주목된다.",
+        "sourceUrl": "https://www.kdfnews.com/news/articleView.html?idxno=189593"
+      },
+      {
+        "emoji": "⚔️",
+        "title": "나 혼자만 레벨업: 어라이즈 — 글로벌 누적 7천만 다운로드·2.5주년 업데이트 예고",
+        "genre": "액션 RPG",
+        "tag": "KR",
+        "status": "넷마블 '나 혼자만 레벨업: 어라이즈'가 글로벌 누적 다운로드 7천만 건을 넘었다. 10월 19일 개발자 라이브에서 2.5주년 업데이트 계획을 공개했다.",
+        "schedule": "업데이트 적용일은 기사에 미기재. 7천만 돌파 기념 보상 진행 중.",
+        "features": "성진우 최대 레벨 160→170 상향, 신규 직업 '레퀴엠', 4인 협동 신규 콘텐츠, 신규 캐릭터 2종이 추가된다.",
+        "differentiation": "레벨 상한 확장과 신규 직업·협동 콘텐츠를 함께 묶어 장기 서비스 동력을 보강한다.",
+        "whyImportant": "출시 2년 반이 지난 IP 기반 모바일 게임이 글로벌 누적 다운로드 7천만 건을 기록했다는 점에서 장수 운영의 성과를 보여준다.",
+        "sourceUrl": "https://www.kdfnews.com/news/articleView.html?idxno=189593"
+      },
+      {
+        "emoji": "🦸",
+        "title": "Dispatch — 모바일 12월 9일 출시, 앞 4개 에피소드 무료",
+        "genre": "내러티브 슈퍼히어로 게임",
+        "tag": "GL",
+        "status": "AdHoc Studio의 슈퍼히어로 내러티브 게임 'Dispatch'가 12월 9일 iOS·안드로이드로 출시된다고 10월 23일 발표됐다.",
+        "schedule": "2026년 12월 9일 모바일 출시. 전체 8개 에피소드 중 첫 4개는 무료.",
+        "features": "전체 게임 가격은 19.99달러이며 앞 4개 에피소드를 무료로 체험할 수 있다.",
+        "differentiation": "모바일에서도 프리미엄 구매형(에피소드 무료 체험 후 결제) 모델을 택했다.",
+        "whyImportant": "콘솔·PC에서 먼저 성공한 내러티브 타이틀이 모바일 프리미엄 모델로 진입하는 사례다.",
+        "sourceUrl": "https://www.pocketgamer.biz/dispatch-coming-to-mobile-on-december-9th-with-first-four-episodes-free/"
+      }
+    ],
+    "chart_changes": [
+      {
+        "emoji": "🥇",
+        "title": "국내 구글 매출 1위 '도깨비의세계' 유지·메이플 키우기 11→5위",
+        "tag": "KR",
+        "body": "모바일인덱스 집계(10/19 정오) 구글 플레이 매출은 1위 도깨비의세계(10/13 18시 이후 1위 유지), 2위 제우스: 오만의 신, 3위 WOS: 화이트아웃 서바이벌, 4위 킹샷, 5위 메이플 키우기 순이다. 메이플 키우기는 10/15 업데이트 이후 11위에서 5위로 올랐고, 넷마블 '솔: 인챈트'는 11위, 쿠로 게임즈 '명조'는 12위다.",
+        "sourceUrl": "https://www.wolyo.co.kr/news/articleView.html?idxno=319280"
+      },
+      {
+        "emoji": "📲",
+        "title": "씰M2, 사전 다운로드 시작 후 앱스토어·구글 인기 1위",
+        "tag": "KR",
+        "body": "회사 발표에 따르면 씰M2는 10/19 사전 다운로드 시작 후 앱스토어 인기 1위, 10/20 구글 플레이 인기 1위에 올랐고 10/22 출시 당일 양대 마켓 인기 1위를 기록했다. 인기 순위 기준이며 매출 순위는 별도 확인이 필요하다.",
+        "sourceUrl": "https://www.ddaily.co.kr/page/view/2026102215562317771"
+      },
+      {
+        "emoji": "📈",
+        "title": "우마무스메, 업데이트 효과로 구글 매출 25위 재진입",
+        "tag": "KR",
+        "body": "게임포커스 보도(10/19)에 따르면 '우마무스메 프리티 더비'가 업데이트 효과로 오랜만에 상위권에 재진입해 구글 매출 21~30위 구간의 25위를 기록했다.",
+        "sourceUrl": "http://www.gamefocus.co.kr/detail.php?number=179901"
+      },
+      {
+        "emoji": "🌐",
+        "title": "Q3 미국 퍼블리셔 매출 1위 Scopely 5억 700만 달러·하이퍼캐주얼 다운로드 1위 Block Blast",
+        "tag": "GL",
+        "body": "Mobilegamer.biz(10/21)가 인용한 Sensor Tower 자료(미국 기준)로 Q3 퍼블리셔 매출 1위는 Scopely(5억 700만 달러, 전분기 대비 2% 감소), 2위는 Century Games(2억 8천만 달러, 한 계단 상승)다. AppMagic 추정 Q3 하이퍼캐주얼 다운로드는 Block Blast 4,700만(1위), Arrow Puzzle 4,200만, Meowdoku 3,200만 순이다.",
+        "sourceUrl": "https://mobilegamer.biz/data-digest-scopely-century-and-dream-lead-publisher-list-block-blast-and-arrows-top-download-chart-more/"
+      }
+    ],
+    "industry_news": [
+      {
+        "emoji": "🤝",
+        "title": "슈퍼셀, 메타코어 인수 완료 — 머지 맨션 슈퍼셀 포트폴리오 편입",
+        "tag": "GL",
+        "body": "슈퍼셀이 10/19 메타코어 지분 100% 인수를 완료했다. 5월 발표된 거래로 당초 9월 말 종료 예상이었으며 금액은 비공개다. 메타코어는 핀란드에서 최대 160개 직무 감축 구조조정을 함께 발표했다.",
+        "sourceUrl": "https://www.pocketgamer.biz/supercell-completes-full-acquisition-of-metacore/"
+      },
+      {
+        "emoji": "🔒",
+        "title": "슈퍼셀, 사이버 공격 발표 — 플레이어 데이터 영향 없음",
+        "tag": "GL",
+        "body": "슈퍼셀은 10/21 발표에서 직전 주 여러 차례 공격을 받았고, 내부 회의·발표 영상 호스팅 플랫폼이 무단 접근됐다고 밝혔다. 조사 결과 플레이어 데이터는 영향이 없으며 경찰과 규제 당국에 신고했다.",
+        "sourceUrl": "https://mobilegamer.biz/supercell-hit-by-cyberattack-but-says-no-player-data-was-affected/"
+      },
+      {
+        "emoji": "👔",
+        "title": "스틸프런트, 전 킹 임원 마커스 제이콥스를 신임 CEO로 선임",
+        "tag": "GL",
+        "body": "스틸프런트 그룹이 10/23 마커스 제이콥스를 사장 겸 그룹 CEO로 선임했다. 11/1 취임하며 2017년부터 근무한 알렉시스 보네의 후임이다. EA·킹·엠바크 스튜디오 경력이 있다.",
+        "sourceUrl": "https://www.pocketgamer.biz/stillfront-names-former-king-executive-marcus-jacobs-as-ceo/"
+      },
+      {
+        "emoji": "⚖️",
+        "title": "PEGI, 유료 랜덤 아이템 게임 연령 등급 16세로 상향",
+        "tag": "GL",
+        "body": "PEGI 운영 기관이 유료 랜덤 아이템(루트박스 등)이 있는 기존 디지털 게임을 'PEGI 16 – 유료 랜덤 아이템'으로 올리고 있다(10/20 보도). 10월 중순부터 순차 적용 중이며 포켓몬 TCG 포켓, 파이어 엠블렘 히어로즈 등 가챠 게임도 12→16으로 상향됐다.",
+        "sourceUrl": "https://www.pocketgamer.biz/games-with-loot-boxes-receive-updated-pegi-16-rating-for-paid-random-items/"
+      },
+      {
+        "emoji": "🎪",
+        "title": "크래프톤, 지스타 2026에 5종 출품 — 왈츠앤잼 12/3 글로벌 출시",
+        "tag": "KR",
+        "body": "크래프톤이 11월 부산 지스타 2026에 10년 연속 참가해 PUBG, 타래: 언바운드, 에이지 트위스터, 왈츠앤잼, 템빨용사 5종을 선보인다(10/20 보도). 왈츠앤잼은 12월 3일 글로벌 출시된다.",
+        "sourceUrl": "https://www.kdfnews.com/news/articleView.html?idxno=189593"
+      },
+      {
+        "emoji": "💰",
+        "title": "Mika Games, 1,000만 달러 조달 — 소프트 론칭 이후 스튜디오 지원",
+        "tag": "GL",
+        "body": "워게이밍 공동 창업자 닉 카텔라포프가 세운 Mika Games가 Flint Capital 주도로 1,000만 달러를 조달했다. 자금은 제품 개발과 유저 확보 테스트에 쓰인다(10/24 팟캐스트 보도 기준).",
+        "sourceUrl": "https://www.pocketgamer.biz/why-ea-shut-down-bioware-mika-games-10m-supercell-metacore-week-in-mobile-games-podcast/"
+      },
+      {
+        "emoji": "✂️",
+        "title": "EA, 바이오웨어 폐쇄·약 400명 감원 (콘솔·PC 중심)",
+        "tag": "GL",
+        "body": "EA가 약 400명 규모 감원의 일환으로 바이오웨어를 폐쇄하고 차기 매스 이펙트를 취소한다고 PocketGamer.biz 팟캐스트(10/24)가 전했다. 모바일 팀 영향 여부는 확인되지 않았다.",
+        "sourceUrl": "https://www.pocketgamer.biz/why-ea-shut-down-bioware-mika-games-10m-supercell-metacore-week-in-mobile-games-podcast/"
+      }
+    ],
+    "marketing_community": [
+      {
+        "emoji": "🎬",
+        "title": "니케 4주년 — 옥외광고·오케스트라 콘서트·AGF 연계",
+        "tag": "KR",
+        "body": "니케는 10/30~11/1 용산 아이파크몰 옥외광고, 12월 AGF 2026(킨텍스) 참여, 내년 3월 20~21일 고양 아람누리 오케스트라 콘서트를 예고했다. 10/27 도로롱 이모티콘도 출시된다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1782333"
+      },
+      {
+        "emoji": "🎃",
+        "title": "몬길: STAR DIVE, 반주년 할로윈 이벤트·오프라인 굿즈 스토어",
+        "tag": "KR",
+        "body": "넷마블 몬길은 신규 5성 격투가 '클로에'를 추가하고 10/28부터 할로윈 이벤트를 연다. 반주년 오프라인 굿즈 스토어는 10/31~11/16 국제전자센터 3층에서 운영한다.",
+        "sourceUrl": "https://www.onews.tv/news/articleView.html?idxno=289719"
+      },
+      {
+        "emoji": "🏷️",
+        "title": "템빨: 오버기어드, 서버·캐릭터명 사전 선점 시작",
+        "tag": "KR",
+        "body": "넥슨이 그레이게임즈가 개발하는 '템빨: 오버기어드'의 서버·캐릭터명 선점을 시작했다(10/21 보도). 일반 13개·크리에이터 6개 등 19개 서버이며 캐릭터명은 전 서버 중복 불가다. 연내 한국·대만·홍콩·마카오에 PC·모바일 크로스플랫폼으로 출시 예정.",
+        "sourceUrl": "https://www.onews.tv/news/articleView.html?idxno=289719"
+      },
+      {
+        "emoji": "🌍",
+        "title": "포켓몬 GO, 'GO Wild Area: Into the Wild' 11/9 시작 공지",
+        "tag": "GL",
+        "body": "포켓몬 GO가 10/20 이벤트 'GO Wild Area: Into the Wild'를 11월 9일 시작한다고 공지했다.",
+        "sourceUrl": "https://playday.one/2026/10/25/weekly-roundup-october-19-25/"
+      }
+    ]
+  }
+}
