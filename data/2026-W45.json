@@ -1,0 +1,241 @@
+{
+  "id": "2026-W45",
+  "weekStart": "2026-11-02",
+  "weekEnd": "2026-11-08",
+  "publishedAt": "2026-11-09T09:30:00+09:00",
+  "summary": "11월 2~8일 국내에서는 넷마블이 3분기 매출 6,347억 원(-8.8%)·영업이익 504억 원(-44.6%)을, 카카오게임즈가 매출 약 691억 원·영업손실 약 263억 원(8분기 연속 적자)을 발표했다. '승리의 여신: 니케'는 4주년 업데이트로 구글플레이 매출 1위(베타뉴스 주간 순위)에 올랐고, 넥슨은 MMORPG '템빨: 오버기어드'를 11/26 출시한다고 공개했다. 글로벌에서는 슈퍼셀이 브롤스타즈 시즌 56 '브롤 바이스'를 열었고, 앱러빈(매출 21.8억 달러, +55%)과 유니티(매출 6.22억 달러, 상장 후 첫 GAAP 흑자)가 3분기 실적을 냈다. 로이터를 인용한 보도에서는 실버레이크와 PIF가 유니티 약 250억 달러 인수를 타진 중이나 합의된 거래는 없다.",
+  "sections": {
+    "launches_updates": [
+      {
+        "emoji": "⚔️",
+        "title": "템빨: 오버기어드 — 넥슨, 11/26 출시일 공개",
+        "genre": "MMORPG",
+        "tag": "KR",
+        "status": "넥슨이 그레이게임즈가 개발한 MMORPG '템빨: 오버기어드'의 출시일을 11월 5일 공개했다. 웹소설·웹툰 원작으로, 출처는 원작 합산 조회수를 약 13억 회로 소개했다.",
+        "schedule": "11월 26일 0시(KST) 출시. 두 개 지역으로 나뉜 서버로 서비스. 플랫폼은 출처에 명시되지 않았다.",
+        "features": "갓핸드 메모리 로드아웃 시스템, 무기 개조, 서버 간 대결 '디멘션 시스템'과 3개 디비전의 디멘션 리그를 갖췄다. 로드맵은 출시 1~2개월차 헬가오 레이드, 3개월차 첫 대형 업데이트, 4~6개월차 신규 무기 종류다.",
+        "differentiation": "웹소설·웹툰 IP 기반에 서버 대항전 구조를 전면에 내세운 MMORPG다.",
+        "whyImportant": "넥슨이 연말 MMORPG 신작 일정을 확정했다는 점에서 11월 말 국내 MMORPG 경쟁 구도를 가늠할 수 있다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783052"
+      },
+      {
+        "emoji": "🍁",
+        "title": "메이플 키우기 1주년 '메키 살롱' — 신규 직업·콘텐츠 공개",
+        "genre": "방치형 RPG",
+        "tag": "KR",
+        "status": "넥슨이 '메이플 키우기' 1주년(11/6)을 맞아 11월 5일 업데이트 '메키 살롱'을 공개했다. 11/9 베타뉴스 주간 순위에서 구글플레이 매출 6위에 올랐다.",
+        "schedule": "이벤트는 12/16까지, 이벤트 상점은 12/18까지. 신규 캐릭터 성장 이벤트 패스는 2027/1/6까지.",
+        "features": "시그너스 기사단 신규 직업 소울마스터·플레임위자드, 최대 4인 던전 '몬스터파크 익스트림', '길드 현상수배'를 추가했다. 이벤트 반지 '혼돈의 반지'를 강화해 실제 장비로 교환할 수 있고, 매일 1시간 경험치 1000% 핫타임을 제공한다.",
+        "differentiation": "1주년 업데이트에 신규 직업과 협동 던전을 함께 투입해 장기 서비스 동력을 보강했다.",
+        "whyImportant": "출시 1년 차 방치형 RPG가 구글플레이 매출 상위권을 유지하는 사례다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783042"
+      },
+      {
+        "emoji": "🎭",
+        "title": "마비노기 모바일 × 주술회전 콜라보 — 12/3까지",
+        "genre": "MORPG",
+        "tag": "KR",
+        "status": "넥슨이 데브캣 스튜디오가 개발한 '마비노기 모바일'의 주술회전 콜라보를 11월 5일 공지했다.",
+        "schedule": "2026년 12월 3일까지 진행.",
+        "features": "이타도리·후시구로·쿠기사키·고죠·나나미 5종 캐릭터로 변신할 수 있고, 고죠는 영역전개 '무량공처'를 사용한다. 던바튼 광장이 애니메이션 풍으로 꾸며지고 출석·일일 수련·누적 로그인 이벤트가 열린다.",
+        "differentiation": "대형 애니메이션 IP 변신 콜라보를 MORPG에 접목했다.",
+        "whyImportant": "IP 콜라보가 기존 서비스작 이용자 복귀 유도 수단으로 쓰이는 흐름을 보여준다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783045"
+      },
+      {
+        "emoji": "🦅",
+        "title": "레이븐2 '마하' 초고속 성장 서버 — 11/18 오픈",
+        "genre": "MORPG",
+        "tag": "KR",
+        "status": "넷마블이 '레이븐2'(PC·모바일)의 초고속 성장 서버 '마하'를 11월 6일 공개했다.",
+        "schedule": "사전 등록은 11/17까지, 서버는 11/18 오픈.",
+        "features": "서버에서 얻은 캐릭터와 장비는 일반 서버로 이전할 수 있다. 사전 등록자 전원에게 전설 시작 패키지(계정당 1회)를 지급한다.",
+        "differentiation": "일반 서버로 성과를 옮길 수 있는 성장 특화 서버 구조다.",
+        "whyImportant": "신규 서버로 기존 서비스작 활성 이용자를 끌어올리려는 운영 전략 사례다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783113"
+      },
+      {
+        "emoji": "📖",
+        "title": "테일즈위버 모바일 — 첫 공개, FGT 12/12 시작",
+        "genre": "MMORPG",
+        "tag": "KR",
+        "status": "넥슨이 2003년 온라인 RPG '테일즈위버'를 잇는 MMORPG '테일즈위버 모바일'을 11월 6일 처음 공개했다. 출처는 넥슨의 개발·서비스 관계를 명시하지 않았다.",
+        "schedule": "FGT(포커스 그룹 테스트)는 12월 12일 시작. 신청은 '15일'에 마감(출처에 월 표기 없음). 넥슨닷컴·NEXON PLAY에서 신청.",
+        "features": "출처에 구체적인 게임 시스템 설명은 제한적이며, 첫 공개와 테스트 일정 중심이다.",
+        "differentiation": "20여 년 된 PC 온라인 RPG IP를 모바일로 되살린 작품이다.",
+        "whyImportant": "넥슨이 올해 말~내년 초 추가 MMORPG 라인업을 공개해 신작 파이프라인이 두터워졌다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783086"
+      },
+      {
+        "emoji": "🌟",
+        "title": "브롤스타즈 시즌 56 '브롤 바이스' 개막",
+        "genre": "멀티플레이어 배틀(슈터)",
+        "tag": "GL",
+        "status": "슈퍼셀이 11월 3일 점검 후 GTA VI에서 영감을 받은 시즌 '브롤 바이스'를 열었고, 시즌은 11월 5일 시작됐다.",
+        "schedule": "11/5 시즌 개시.",
+        "features": "신규 브롤러로 전설 등급 '썬더 프로그스'와 신화 등급 '레이&루비'(협동 설계)를 추가했고 스킨·하이퍼차지·버피를 더했다. 랭크전은 해금 트로피가 1,000→5,000으로 오르고 전 랭크 파워 11 브롤러가 필요하며 다이아몬드 요구 브롤러 수가 9→12로 올라간다. 다음 프로 패스 시즌은 3개월로 줄고 이후 월간으로 전환된다.",
+        "differentiation": "IP 오마주 테마와 랭크전 난이도 상향을 한 시즌에 묶었다.",
+        "whyImportant": "장기 서비스작이 대형 시즌 개편으로 이용자 참여를 유지하는 방식을 보여준다.",
+        "sourceUrl": "https://www.pocketgamer.biz/supercell-launches-gta-vi-inspired-brawl-vice-season-for-brawl-stars/"
+      },
+      {
+        "emoji": "🦇",
+        "title": "WB All-Star Mayhem(국내명 WB 올스타 키우기) — 카밤 공개",
+        "genre": "방치형 수집 RPG",
+        "tag": "GL",
+        "status": "넷마블 북미 자회사 카밤이 워너브러더스 인터랙티브 엔터테인먼트 라이선스로 개발한 모바일 방치형 RPG를 11월 6일 공개했다.",
+        "schedule": "11월 중 iOS·안드로이드 소규모 지역 테스트 예정. 정식 출시일은 미공개.",
+        "features": "배트맨·슈퍼맨·벅스 버니·스쿠비두·핀과 제이크 등 워너 애니메이션 9개 시리즈에서 100종 이상 캐릭터로 시작한다.",
+        "differentiation": "여러 워너 애니메이션 IP를 한 게임에 모은 크로스오버 방치형 RPG다.",
+        "whyImportant": "카밤의 '마블 콘테스트 오브 챔피언'이 모바일 누적 매출 20억 달러 이상(PocketGamer.biz 인용)인 만큼 후속 IP 신작의 성과가 주목된다.",
+        "sourceUrl": "https://www.pocketgamer.biz/kabam-reveals-mobile-rpg-bringing-together-nine-warner-bros-animated-franchises/"
+      }
+    ],
+    "chart_changes": [
+      {
+        "emoji": "🏆",
+        "title": "니케 4주년 업데이트로 구글플레이 매출 1위",
+        "tag": "KR",
+        "body": "베타뉴스 주간 모바일 순위(11/2~11/8)에서 '승리의 여신: 니케'가 4주년 업데이트와 함께 구글플레이 매출 1위에 올랐다. 신규 SSR 필그림 3종과 풀보이스 스토리, 한정 코스튬이 추가됐고 무신사 팝업스토어가 11/6부터 열렸다. '메이플 키우기'는 1주년 이벤트로 구글플레이 매출 6위를 기록했다. 이전 주 순위와 앱스토어 데이터는 출처에 없다.",
+        "sourceUrl": "https://www.betanews.net/article/view/beta202611090010"
+      },
+      {
+        "emoji": "🃏",
+        "title": "포켓몬 TCG 포켓 2주년, 2년 누적 순매출 약 9억 7,520만 달러",
+        "tag": "GL",
+        "body": "AppMagic 추정으로 2024/10/30 글로벌 출시 이후 2년 순매출은 약 9억 7,520만 달러다. 1년차 7억 4,140만 달러, 2년차 2억 3,370만 달러(전년 대비 68% 감소)이며 2026년 매출 순위는 30위로 2025년 10위에서 내려갔다. 최고 일매출은 2025/2/28 약 750만 달러다.",
+        "sourceUrl": "https://www.pocketgamer.biz/pokmon-trading-card-game-pocket-celebrates-second-anniversary/"
+      },
+      {
+        "emoji": "🌱",
+        "title": "피크민 블룸 5년차 매출 3,610만 달러, 전년比 53% 증가",
+        "tag": "GL",
+        "body": "AppMagic 기준 5년차 매출은 3,610만 달러로 4년차(2,360만 달러)보다 53% 늘었고 누적 순매출은 약 9,710만 달러다. 누적 지출 비중은 일본 49%, 대만 18%, 미국 15%이며 5년차에는 대만(1,370만 달러)이 일본(1,020만 달러)을 앞섰다. 11/3 5주년 업데이트로 '비밀 동굴' 기능이 추가됐다.",
+        "sourceUrl": "https://www.pocketgamer.biz/pikmin-bloom-blossoms-in-fifth-year-with-record-36m/"
+      },
+      {
+        "emoji": "📊",
+        "title": "AppMagic: 2026 신작 158종 100만 달러 돌파 분석",
+        "tag": "GL",
+        "body": "2026년 출시작 중 인앱결제 100만 달러를 넘긴 158종을 분석한 결과(광고 제외), 100만 달러까지 걸린 기간 중앙값은 RPG 62.5일, 퍼즐 126일이다. 누적 매출 중앙값은 퍼즐 430만 달러, RPG 200만 달러다. IP 기반 42종 중 20종(48%)이 30일 내 100만 달러를 넘었고 오리지널 116종 중에서는 7종(6%)이었다.",
+        "sourceUrl": "https://www.pocketgamer.biz/new-mobile-rpgs-hit-1m-twice-as-fast-as-puzzle-but-puzzles-playing-the-long-game/"
+      }
+    ],
+    "industry_news": [
+      {
+        "emoji": "📉",
+        "title": "넷마블 3분기 매출 6,347억 원(-8.8%)·영업이익 504억 원(-44.6%)",
+        "tag": "KR",
+        "body": "11/5 발표. 매출은 전년 동기 대비 8.8%, 전 분기 대비 15.3% 감소했고 영업이익은 전년 대비 44.6% 줄었다. 순이익은 222억 원(-45.3% YoY)이다. 해외 매출은 4,762억 원으로 전체의 75%이며 북미 40%, 한국 25%다. 넷마블은 신작 출시 지연을 부진 요인으로 꼽았다.",
+        "sourceUrl": "https://www.invenglobal.com/articles/28204/netmarble-posts-q3-revenue-of-krw-6347b-operating-profit-of-krw-504b-focusing-on-quality-of-new-titles"
+      },
+      {
+        "emoji": "🗓️",
+        "title": "넷마블, 2027년 신작 13종 라인업 공개",
+        "tag": "KR",
+        "body": "11/5 기준 2027년 13종을 예고했다. 기발표 6종은 '샹리라 프런티어: 일곱 거상', '나 혼자만 레벨업: 카르마', 'WB 올스타 키우기(프로젝트 아이기스)', '가디언 테일즈: 딕 닷(프로젝트 옥토퍼스)', '펄 인 블루', '이블베인'이며, 신규 7종은 윌더링스·바벨 프로토콜·프로젝트 D·X·C·M·다크 프리스트다. 장르·출시 시기는 출처에 없다.",
+        "sourceUrl": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1435309"
+      },
+      {
+        "emoji": "📉",
+        "title": "카카오게임즈 3분기 매출 약 691억 원, 영업손실 약 263억 원(8분기 연속 적자)",
+        "tag": "KR",
+        "body": "11/4 발표. 매출은 전년 대비 약 46% 감소했고 모바일 매출은 약 506억 원(-40% YoY)이다. 하반기 신작으로 패스 오브 엑자일 2 정식 출시(12/12), 오딘 Q: 발할라 스크롤(2027년 1월)을 예고했다.",
+        "sourceUrl": "https://economist.co.kr/article/view/ecn202611040047"
+      },
+      {
+        "emoji": "🤝",
+        "title": "카카오게임즈, 미투온 인수 추진 — 4분기 내 마무리 전망",
+        "tag": "KR",
+        "body": "9월 결정한 미투온 인수는 소셜카지노·캐주얼·마인드스포츠 확대가 목적이며 기업결합 심사를 거쳐 2026년 4분기 완료가 예상된다고 11/5 보도됐다.",
+        "sourceUrl": "https://www.fnnews.com/news/202611051528538140"
+      },
+      {
+        "emoji": "📈",
+        "title": "앱러빈 3분기 매출 21.8억 달러(+55%), 순이익 14.4억 달러",
+        "tag": "GL",
+        "body": "11/4 발표. 매출 21억 8,480만 달러, 조정 EBITDA 18.4억 달러(마진 84%)다. 4분기 매출 가이던스는 23.65억~23.95억 달러다.",
+        "sourceUrl": "https://ppc.land/applovin-revenue-gains-55-to-2-18bn-as-new-ad-models-lift-gaming"
+      },
+      {
+        "emoji": "🧩",
+        "title": "유니티 3분기 매출 6.22억 달러(+32%), 상장 후 첫 분기 GAAP 흑자",
+        "tag": "GL",
+        "body": "11/5 발표. GAAP 순이익 1.22억 달러로 전년 동기 1.27억 달러 손실에서 흑자 전환했다. 벡터는 전년 대비 126% 성장했다. 4분기 전략 매출 가이던스는 6.83억~6.91억 달러다.",
+        "sourceUrl": "https://mobilegamer.biz/unity-posts-first-profit-since-its-ipo-as-vector-grows-126/"
+      },
+      {
+        "emoji": "📰",
+        "title": "[보도] 실버레이크·PIF, 유니티 약 250억 달러 인수 타진",
+        "tag": "GL",
+        "body": "로이터(11/5)를 인용한 PocketGamer.biz 11/6 보도로, 합의된 거래는 없으며 조건은 바뀔 수 있다. 실버레이크는 유니티 지분 약 8%를 보유 중이다. 확정된 사실이 아닌 협상 보도다.",
+        "sourceUrl": "https://www.pocketgamer.biz/silver-lake-and-pif-explore-25bn-deal-to-acquire-unity/"
+      },
+      {
+        "emoji": "🎰",
+        "title": "플레이티카 3분기 매출 6.738억 달러, 일평균 이용자 710만 명",
+        "tag": "GL",
+        "body": "11/5 발표. 매출은 전년 동기(6.746억 달러) 대비 0.1% 감소했고 순이익 4,040만 달러, 조정 EBITDA 2.521억 달러(마진 37.4%)다. 일평균 이용자(DAU)는 전년 820만 명에서 710만 명으로 줄었다. 연간 가이던스는 유지했다.",
+        "sourceUrl": "https://www.manilatimes.net/2026/11/05/tmt-newswire/globenewswire/playtika-holding-corp-reports-q3-2026-financial-results/2462747/amp"
+      },
+      {
+        "emoji": "🔻",
+        "title": "플레이스튜디오, 스튜디오 4곳 폐쇄·177명 감원… '테트리스 블록 파티' 서비스 종료",
+        "tag": "GL",
+        "body": "11/4 보도. AppMagic 추정 인앱결제 약 810만 달러, 다운로드 560만 건을 기록한 게임이다. 감액손실은 최대 350만 달러로 11/9 3분기 실적과 함께 반영된다.",
+        "sourceUrl": "https://www.pocketgamer.biz/playstudios-shuts-down-tetris-block-party-after-177-job-cuts/"
+      },
+      {
+        "emoji": "⚖️",
+        "title": "영국 ASA, 킹 등 모바일 게임 광고 4곳 금지 판정",
+        "tag": "GL",
+        "body": "실제 게임에 없는 플레이를 보여줘 소비자를 오인시켰다는 이유로 킹(팜 히어로 사가), 룸 게임즈(픽셀 플로우), 오므닐로(다크 워 서바이벌), Vistrex(비스트렉스)(아이들 좀비 마이너 골드 타이쿤) 광고가 금지됐다(11/4 보도).",
+        "sourceUrl": "https://www.pocketgamer.biz/uk-regulator-bans-mobile-game-ads-from-king-scopely-and-others/"
+      }
+    ],
+    "marketing_community": [
+      {
+        "emoji": "🏟️",
+        "title": "몬스터헌터 나우 카니발 2026 글로벌 — 11/28~29",
+        "tag": "GL",
+        "body": "스코플리 익스플로어가 11월 6일 발표했다. 행사는 11/28~29이고 티켓은 16일 인앱·웹 스토어에서 판매한다. 아마츠마가츠치와 나루가쿠루가가 등장하며 재료 2배, 도달 범위 1.5배 보너스가 적용된다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783067"
+      },
+      {
+        "emoji": "🛍️",
+        "title": "니케 × 무신사 팝업스토어 — 11/6부터",
+        "tag": "KR",
+        "body": "4주년과 맞물려 팝업스토어가 11/6부터 열렸고, 12월 AGF 2026 참가와 2027년 오케스트라 콘서트가 예정돼 있다.",
+        "sourceUrl": "https://www.betanews.net/article/view/beta202611090010"
+      },
+      {
+        "emoji": "🔔",
+        "title": "귀혼키우기 사전예약 100만 돌파",
+        "tag": "KR",
+        "body": "엠게임이 2005년 PC MMORPG '귀혼'을 기반으로 개발 중인 무협 방치형 RPG로, 8/11 사전예약 시작 후 11/6 100만을 넘겼다. 정식 출시는 2026년 11월 목표이며 날짜는 미정이다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783116"
+      },
+      {
+        "emoji": "🧟",
+        "title": "바이오하자드 서바이벌 유닛 1주년 — 신규 영웅·트위치콘 부스",
+        "tag": "KR",
+        "body": "조이시티가 애니플렉스와 공동 개발해 캡콤 협업으로 서비스 중인 모바일 전략 게임이다. 레온·에이다·웨스커를 추가하고 빌런·코스튬 시스템을 도입했으며 11/13 샌디에이고 트위치콘 체험존을 운영한다.",
+        "sourceUrl": "https://www.gamemeca.com/view.php?gid=1783054"
+      },
+      {
+        "emoji": "📺",
+        "title": "6월의 여정 × ITV 빅브라더 — 모바일 게임 IP 첫 편입",
+        "tag": "GL",
+        "body": "플레이티카 산하 우가와 ITV가 11/4 방송분에 '사라진 하우스메이트의 미스터리' 과제를 넣었으며, 양사는 빅브라더 시리즈에 모바일 게임 IP가 들어간 첫 사례라고 밝혔다.",
+        "sourceUrl": "https://www.pocketgamer.biz/junes-journey-makes-tv-crossover-through-itv-big-brother-collaboration/"
+      },
+      {
+        "emoji": "🎱",
+        "title": "8 볼 스트라이크, 스티븐 헨드리를 앰배서더로 선정",
+        "tag": "GL",
+        "body": "아비아게임즈가 스누커 챔피언 스티븐 헨드리를 앰배서더 겸 인게임 튜토리얼 코치로 발탁했다(11/2). 11월 콘텐츠로 '7-크라운 챌린지'와 테마 큐를 선보인다.",
+        "sourceUrl": "https://www.pocketgamer.biz/exclusive-snooker-champion-stephen-hendry-becomes-ambassador-for-8-ball-strike/"
+      }
+    ]
+  }
+}
